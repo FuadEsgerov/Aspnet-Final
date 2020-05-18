@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jotex", "Jotex\Jotex.csproj", "{B19BD980-D6D3-440F-A3C2-30ACFAC532A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{BD258786-794D-43D4-9BBF-62F335B79342}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B19BD980-D6D3-440F-A3C2-30ACFAC532A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B19BD980-D6D3-440F-A3C2-30ACFAC532A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B19BD980-D6D3-440F-A3C2-30ACFAC532A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B19BD980-D6D3-440F-A3C2-30ACFAC532A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD258786-794D-43D4-9BBF-62F335B79342}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD258786-794D-43D4-9BBF-62F335B79342}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD258786-794D-43D4-9BBF-62F335B79342}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD258786-794D-43D4-9BBF-62F335B79342}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {74D281E7-243B-43A0-9775-356A9F3DB924}
+	EndGlobalSection
+EndGlobal
