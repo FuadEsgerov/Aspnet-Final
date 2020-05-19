@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Repository.Models
 {
-   public class Slider:BaseEntity
+   public class SliderItem:BaseEntity
     {
         [Required]
         [MaxLength(200)]
@@ -18,6 +18,9 @@ namespace Repository.Models
         [Required]
         [MaxLength(100)]
         public string Image { get; set; }
+        [Required]
+        [MaxLength(50)]
+        public string ActionText { get; set; }
         [Required]
         [MaxLength(200)]
         public string EndPoint { get; set; }
