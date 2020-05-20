@@ -11,7 +11,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Repository.Data;
+using Repository.Repositories.ContactRepositories;
 using Repository.Repositories.ContentRepositories;
+using Repository.Repositories.FaqRepository;
 
 namespace Jotex
 {
@@ -30,6 +32,8 @@ namespace Jotex
             services.AddControllersWithViews();
             services.AddAutoMapper(typeof(Startup));
             services.AddTransient<IContentRepository, ContentRepository>();
+            services.AddTransient<IFaqRepository, FaqRepository>();
+            services.AddTransient<IContactRepository, ContactRepository>();
             services.AddDbContext<JotexDbContext>(options =>
       options.UseSqlServer(Configuration.GetConnectionString("Default"),
       x => x.MigrationsAssembly("Repository")));

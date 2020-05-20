@@ -1,0 +1,58 @@
+﻿
+@foreach (var item in Model)
+{
+    <div class="inner clearfix">
+
+        <div class="left-col">
+            <div class="section-title">
+                <span>About us</span>
+                <h2>@item.Title</h2>
+            </div>
+            <div class="details">
+                <p>@item.Text</p>
+                <h5>@item.Phone</h5>
+            </div>
+            <div class="fun-fact-area">
+                <div class="fun-fact-grids clearfix">
+                    <div class="grid">
+                        <div class="info">
+                            <i class="fi flaticon-umbrella-2"></i>
+                            <h3><span class="odometer" data-count="4500">00</span></h3>
+                            <p>Insurance Policies</p>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="info">
+                            <i class="fi flaticon-agent"></i>
+                            <h3><span class="odometer" data-count="68">00</span></h3>
+                            <p>Insurance Agents</p>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="info">
+                            <i class="fi flaticon-badge"></i>
+                            <h3><span class="odometer" data-count="50">00</span>+</h3>
+                            <p>Award win</p>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="info">
+                            <i class="fi flaticon-smile"></i>
+                            <h3><span class="odometer" data-count="2500">00</span>%</h3>
+                            <p>Happy clients</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-col">
+            <div class="about-info">
+                <h3>@item.Information </h3>
+                <p>@item.SubDetail</p>
+                <a href="@item.EndPoint" class="theme-btn">@item.ActionText</a>
+            </div>
+            <div class="img-holder">
+                <img src="~/images/@item.Image" alt>
+            </div>
+        </div>
+    </div>}

@@ -7,8 +7,6 @@ namespace Jotex.Models
 {
     public class FaqViewModel
     {
-    
-   
        
         public string Question { get; set; }
        

@@ -8,11 +8,14 @@ namespace Repository.Models
    public class LikeableArea :BaseEntity
     {
         [Required]
-        [MaxLength(50)]
+        [MaxLength(100)]
         public string Title { get; set; }
         [Required]
-        [MaxLength(150)]
+        [MaxLength(300)]
         public string Information { get; set; }
+        [Required]
+        [MaxLength(50)]
+        public string CallUs { get; set; }
         [Required]
         [MaxLength(50)]
         public string Phone { get; set; }
@@ -20,7 +23,7 @@ namespace Repository.Models
         [MaxLength(100)]
         public string EndPoint { get; set; }
         [Required]
-        [MaxLength(100)]
+        [MaxLength(150)]
 
         public string Video { get; set; }
         [Required]

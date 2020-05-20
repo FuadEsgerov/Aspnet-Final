@@ -15,34 +15,25 @@ namespace Repository.Models
         [MaxLength(500)]
         public string Text { get; set; }
         [Required]
-        [MaxLength(100)]
-        public string SubTitle { get; set; }
+        [MaxLength(50)]
+        public string Phone{ get; set; }
         [Required]
-        public decimal PolicyCount { get; set; }
+        [MaxLength(300)]
+        public string Information { get; set; }
         [Required]
-        [MaxLength(100)]
-        public string PolicyText { get; set; }
+        [MaxLength(300)]
+        public string SubDetail { get; set; }
         [Required]
         [MaxLength(50)]
-        public string PolicyActionText { get; set; }
-        [Required]
-        public decimal ClaimPercent { get; set; }
+        public string ActionText { get; set; }
         [Required]
         [MaxLength(100)]
-        public string ClaimText { get; set; }
-        [Required]
-        [MaxLength(50)]
-        public string ClaimActionText { get; set; }
-        [Required]
-        public int OfficeCount { get; set; }
+        public string EndPoint { get; set; }
+   
         [Required]
         [MaxLength(100)]
-        public string OfficeText { get; set; }
-        [Required]
-        [MaxLength(50)]
-        public string OfficeActionText { get; set; }
-
-        public IEnumerable<OurAgent> Agents { get; set; }
+        public string Image { get; set; }
+        
 
     }
 }

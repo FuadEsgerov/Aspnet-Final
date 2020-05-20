@@ -26,6 +26,11 @@ namespace Repository.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("ActionText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
                     b.Property<string>("AddedBy")
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
@@ -33,18 +38,20 @@ namespace Repository.Migrations
                     b.Property<DateTime>("AddedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("ClaimActionText")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<decimal>("ClaimPercent")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("ClaimText")
+                    b.Property<string>("EndPoint")
                         .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Information")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(300)")
+                        .HasMaxLength(300);
 
                     b.Property<string>("ModifiedBy")
                         .HasColumnType("nvarchar(50)")
@@ -53,39 +60,18 @@ namespace Repository.Migrations
                     b.Property<DateTime>("ModifiedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("OfficeActionText")
+                    b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
-
-                    b.Property<int>("OfficeCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("OfficeText")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
-                    b.Property<string>("PolicyActionText")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<decimal>("PolicyCount")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("PolicyText")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
 
-                    b.Property<string>("SubTitle")
+                    b.Property<string>("SubDetail")
                         .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
+                        .HasColumnType("nvarchar(300)")
+                        .HasMaxLength(300);
 
                     b.Property<string>("Text")
                         .IsRequired()
@@ -285,6 +271,11 @@ namespace Repository.Migrations
                     b.Property<DateTime>("AddedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("CallUs")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
                     b.Property<string>("EndPoint")
                         .IsRequired()
                         .HasColumnType("nvarchar(100)")
@@ -297,8 +288,8 @@ namespace Repository.Migrations
 
                     b.Property<string>("Information")
                         .IsRequired()
-                        .HasColumnType("nvarchar(150)")
-                        .HasMaxLength(150);
+                        .HasColumnType("nvarchar(300)")
+                        .HasMaxLength(300);
 
                     b.Property<string>("ModifiedBy")
                         .HasColumnType("nvarchar(50)")
@@ -322,13 +313,13 @@ namespace Repository.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<string>("Video")
                         .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
+                        .HasColumnType("nvarchar(150)")
+                        .HasMaxLength(150);
 
                     b.Property<int>("Year")
                         .HasColumnType("int")
@@ -345,9 +336,6 @@ namespace Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("AboutUsId")
-                        .HasColumnType("int");
 
                     b.Property<string>("AddedBy")
                         .HasColumnType("nvarchar(50)")
@@ -387,8 +375,6 @@ namespace Repository.Migrations
                         .HasMaxLength(50);
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AboutUsId");
 
                     b.ToTable("Agents");
                 });
@@ -850,15 +836,6 @@ namespace Repository.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Testimonials");
-                });
-
-            modelBuilder.Entity("Repository.Models.OurAgent", b =>
-                {
-                    b.HasOne("Repository.Models.About", "AboutUs")
-                        .WithMany("Agents")
-                        .HasForeignKey("AboutUsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Repository.Models.Service", b =>

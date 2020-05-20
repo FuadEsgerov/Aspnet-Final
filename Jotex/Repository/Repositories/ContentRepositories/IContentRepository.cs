@@ -8,7 +8,10 @@ namespace Repository.Repositories.ContentRepositories
     public interface IContentRepository
     {
         IEnumerable<SliderItem> GetSliderItems();
-        IEnumerable<Faq> GetFaqs();
+ 
         IEnumerable<Setting> GetSettings();
+        IEnumerable<About> GetAbout();
+        IEnumerable<LikeableArea> GetLikeableArea();
+
     }
 }

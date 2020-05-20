@@ -38,60 +38,7 @@
     <div class="container">
         <div class="row">
             <div class="col col-xs-12">
-                <div class="inner clearfix">
-                    <div class="left-col">
-                        <div class="section-title">
-                            <span>About us</span>
-                            <h2>We are a Award Wining Company!</h2>
-                        </div>
-                        <div class="details">
-                            <p>With a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out</p>
-                            <h5>Phone: ++88123475754</h5>
-                        </div>
-                        <div class="fun-fact-area">
-                            <div class="fun-fact-grids clearfix">
-                                <div class="grid">
-                                    <div class="info">
-                                        <i class="fi flaticon-umbrella-2"></i>
-                                        <h3><span class="odometer" data-count="4500">00</span></h3>
-                                        <p>Insurance Policies</p>
-                                    </div>
-                                </div>
-                                <div class="grid">
-                                    <div class="info">
-                                        <i class="fi flaticon-agent"></i>
-                                        <h3><span class="odometer" data-count="68">00</span></h3>
-                                        <p>Insurance Agents</p>
-                                    </div>
-                                </div>
-                                <div class="grid">
-                                    <div class="info">
-                                        <i class="fi flaticon-badge"></i>
-                                        <h3><span class="odometer" data-count="50">00</span>+</h3>
-                                        <p>Award win</p>
-                                    </div>
-                                </div>
-                                <div class="grid">
-                                    <div class="info">
-                                        <i class="fi flaticon-smile"></i>
-                                        <h3><span class="odometer" data-count="2500">00</span>%</h3>
-                                        <p>Happy clients</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="right-col">
-                        <div class="about-info">
-                            <h3>Since 1950, we are providing the insurance solution for our client’s and we are very successfull about the area. </h3>
-                            <p>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out</p>
-                            <a asp-controller="about" asp-action="index" class="theme-btn">More about us</a>
-                        </div>
-                        <div class="img-holder">
-                            <img src="~/images/about.jpg" alt>
-                        </div>
-                    </div>
-                </div>
+                <vc:about></vc:about>
             </div>
         </div>
     </div> <!-- end container -->
@@ -148,43 +95,10 @@
 <!-- start cta-section -->
 <section class="cta-section section-padding">
     <div class="container">
-        <div class="row">
-            <div class="col col-xs-12">
-                <div class="inner clearfix">
-                    <div class="left-col">
-                        <div class="section-title">
-                            <span>Likeable area</span>
-                            <h2>Best Life Insurance Company in the World!</h2>
-                        </div>
-                        <div class="details">
-                            <p>With a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out</p>
-                        </div>
-                    </div>
-                    <div class="right-col">
-                        <div class="contact-info">
-                            <p>Call us for details</p>
-                            <h2>++8801682530219</h2>
-                            <a asp-controller="contact" asp-action="index" class="theme-btn-s3">Contact with Us</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col col-xs-12">
-                <div class="video-area">
-                    <div class="img-holder">
-                        <img src="~/images/cta.jpg" alt>
-                        <div class="video-btns">
-                            <a href="https://www.youtube.com/embed/G1IbRujko-A" class="video-btn" data-type="iframe" tabindex="0"><i class="fi flaticon-play"></i></a>
-                        </div>
-                    </div>
-                    <div class="experience-text">
-                        <p><span>15</span> Years of <br>experience</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <vc:likeable-area></vc:likeable-area>
     </div> <!-- end container -->
 </section>
+
 <!-- end cta-section -->
 <!-- start pricing-section -->
 <section class="policy-section section-padding">

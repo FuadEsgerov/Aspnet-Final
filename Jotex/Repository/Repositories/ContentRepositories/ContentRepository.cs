@@ -20,16 +20,23 @@ namespace Repository.Repositories.ContentRepositories
             return _context.SliderItems.Where(s => s.Status)
                                            .ToList();
         }
-        public IEnumerable<Faq> GetFaqs()
-        {
-            return _context.Faqs.Where(s => s.Status)
-                                           .ToList();
-        }
+   
         public IEnumerable<Setting>GetSettings()
         {
             return _context.Settings.Where(s => s.Status)
                                            .ToList();
         }
 
+        public IEnumerable<About> GetAbout()
+        {
+            return _context.Abouts.Where(s => s.Status)
+                                        .ToList();
+        }
+
+        public IEnumerable<LikeableArea> GetLikeableArea()
+        {
+            return _context.LikeableAreas.Where(s => s.Status)
+                .ToList();
+        }
     }
 }

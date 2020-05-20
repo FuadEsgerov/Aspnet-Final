@@ -8,8 +8,8 @@ namespace Repository.Models
 {
     public class OurAgent:BaseEntity
     {
-        [Required]
-        public int AboutUsId { get; set; }
+     
+      
         [Required]
         [MaxLength(50)]
         public string Name { get; set; }
@@ -22,7 +22,7 @@ namespace Repository.Models
         [Required]
         [MaxLength(100)]
         public string Image { get; set; }
-        public About AboutUs { get; set; }
+
 
     }
 }
