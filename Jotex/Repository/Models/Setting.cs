@@ -30,7 +30,7 @@ namespace Repository.Models
         [Required]
         [MaxLength(50)]
         public string WorkTime { get; set; }
-        public IEnumerable<About> AboutUs { get; set; }
+
         public ICollection<SocialMediaAccount> Accounts { get; set; }
     }
 }

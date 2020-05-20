@@ -8,6 +8,8 @@ namespace Repository.Models
     public class SocialMediaAccount : BaseEntity
     {
         [Required]
+        public int SettingId { get; set; }
+        [Required]
         [MaxLength(100)]
         public string Icon { get; set; }
         [Required]

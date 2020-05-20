@@ -9,16 +9,10 @@ namespace Repository.Models
     {
 
         [Required]
-        [MaxLength(50)]
-        public string Title { get; set; }
-        [Required]
-        [MaxLength(200)]
-        public string CoverImage { get; set; }
-        [Required]
         [MaxLength(100)]
         public string Question { get; set; }
         [Required]
-        [MaxLength(200)]
+        [MaxLength(400)]
         public string Answer { get; set; }
 
     }

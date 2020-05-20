@@ -79,9 +79,6 @@ namespace Repository.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
-                    b.Property<int?>("SettingId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
 
@@ -101,8 +98,6 @@ namespace Repository.Migrations
                         .HasMaxLength(100);
 
                     b.HasKey("Id");
-
-                    b.HasIndex("SettingId");
 
                     b.ToTable("Abouts");
                 });
@@ -253,13 +248,8 @@ namespace Repository.Migrations
 
                     b.Property<string>("Answer")
                         .IsRequired()
-                        .HasColumnType("nvarchar(200)")
-                        .HasMaxLength(200);
-
-                    b.Property<string>("CoverImage")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(200)")
-                        .HasMaxLength(200);
+                        .HasColumnType("nvarchar(400)")
+                        .HasMaxLength(400);
 
                     b.Property<string>("ModifiedBy")
                         .HasColumnType("nvarchar(50)")
@@ -275,11 +265,6 @@ namespace Repository.Migrations
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
 
                     b.HasKey("Id");
 
@@ -805,7 +790,7 @@ namespace Repository.Migrations
                     b.Property<DateTime>("ModifiedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("SettingId")
+                    b.Property<int>("SettingId")
                         .HasColumnType("int");
 
                     b.Property<bool>("Status")
@@ -867,13 +852,6 @@ namespace Repository.Migrations
                     b.ToTable("Testimonials");
                 });
 
-            modelBuilder.Entity("Repository.Models.About", b =>
-                {
-                    b.HasOne("Repository.Models.Setting", null)
-                        .WithMany("AboutUs")
-                        .HasForeignKey("SettingId");
-                });
-
             modelBuilder.Entity("Repository.Models.OurAgent", b =>
                 {
                     b.HasOne("Repository.Models.About", "AboutUs")
@@ -905,7 +883,9 @@ namespace Repository.Migrations
                 {
                     b.HasOne("Repository.Models.Setting", "Setting")
                         .WithMany("Accounts")
-                        .HasForeignKey("SettingId");
+                        .HasForeignKey("SettingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
