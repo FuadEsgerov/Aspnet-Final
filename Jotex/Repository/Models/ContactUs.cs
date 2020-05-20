@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Repository.Models
 {
-   public class Contact:BaseEntity
+   public class ContactUs:BaseEntity
     {
         [Required]
         [MaxLength(50)]

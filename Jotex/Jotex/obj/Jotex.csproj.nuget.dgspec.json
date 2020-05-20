@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\Aspnet-Final\\Jotex\\Jotex\\Jotex.csproj": {}
+    "C:\\Users\\Darklight\\Documents\\Aspnet-Final\\Jotex\\Jotex\\Jotex.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Aspnet-Final\\Jotex\\Jotex\\Jotex.csproj": {
+    "C:\\Users\\Darklight\\Documents\\Aspnet-Final\\Jotex\\Jotex\\Jotex.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Aspnet-Final\\Jotex\\Jotex\\Jotex.csproj",
+        "projectUniqueName": "C:\\Users\\Darklight\\Documents\\Aspnet-Final\\Jotex\\Jotex\\Jotex.csproj",
         "projectName": "Jotex",
-        "projectPath": "C:\\Users\\User\\Desktop\\Aspnet-Final\\Jotex\\Jotex\\Jotex.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Aspnet-Final\\Jotex\\Jotex\\obj\\",
+        "projectPath": "C:\\Users\\Darklight\\Documents\\Aspnet-Final\\Jotex\\Jotex\\Jotex.csproj",
+        "packagesPath": "C:\\Users\\Darklight\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Darklight\\Documents\\Aspnet-Final\\Jotex\\Jotex\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Darklight\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\Aspnet-Final\\Jotex\\Repository\\Repository.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\Aspnet-Final\\Jotex\\Repository\\Repository.csproj"
+              "C:\\Users\\Darklight\\Documents\\Aspnet-Final\\Jotex\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\Users\\Darklight\\Documents\\Aspnet-Final\\Jotex\\Repository\\Repository.csproj"
               }
             }
           }
@@ -63,6 +63,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -71,21 +77,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\Aspnet-Final\\Jotex\\Repository\\Repository.csproj": {
+    "C:\\Users\\Darklight\\Documents\\Aspnet-Final\\Jotex\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Aspnet-Final\\Jotex\\Repository\\Repository.csproj",
+        "projectUniqueName": "C:\\Users\\Darklight\\Documents\\Aspnet-Final\\Jotex\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\Users\\User\\Desktop\\Aspnet-Final\\Jotex\\Repository\\Repository.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Aspnet-Final\\Jotex\\Repository\\obj\\",
+        "projectPath": "C:\\Users\\Darklight\\Documents\\Aspnet-Final\\Jotex\\Repository\\Repository.csproj",
+        "packagesPath": "C:\\Users\\Darklight\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Darklight\\Documents\\Aspnet-Final\\Jotex\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Darklight\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -128,12 +134,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
