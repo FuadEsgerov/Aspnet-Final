@@ -170,7 +170,6 @@ C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\bin\Debug\netcoreapp3.1\Mi
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
@@ -270,8 +269,6 @@ C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\bin\Debug\netcoreapp3.1\Re
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Jotex.csprojAssemblyReference.cache
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Jotex.AssemblyInfoInputs.cache
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Jotex.AssemblyInfo.cs
-C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Jotex.csproj.CoreCompileInputs.cache
-C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Jotex.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Jotex.RazorAssemblyInfo.cache
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Jotex.RazorAssemblyInfo.cs
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Jotex.TagHelpers.input.cache
@@ -298,3 +295,6 @@ C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\st
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Jotex.dll
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Jotex.pdb
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Jotex.genruntimeconfig.cache
+C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Jotex.csproj.CoreCompileInputs.cache
+C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Jotex.MvcApplicationPartsAssemblyInfo.cache
