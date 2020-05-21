@@ -23,6 +23,7 @@ namespace Jotex.Mapping
             CreateMap<Label, LabelViewModel>();
             CreateMap<Testimonial, TestimonialViewModel>();
             CreateMap<OurBlog, OurBlogViewModel>();
+            CreateMap<CoverdAds, CoverAdsViewModel>();
 
         }
     }

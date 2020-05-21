@@ -1,109 +1,300 @@
-﻿
+﻿@using Jotex.Models
+@model IEnumerable<OurBlogViewModel>
+
+
 @{
     ViewData["Title"] = "Index";
 }
 
-<!-- start page-title -->
-<section class="page-title">
-    <div class="page-title-container">
-        <div class="page-title-wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col col-xs-12">
-                        <h2>Grid 2 columns</h2>
-                        <ol class="breadcrumb">
-                            <li><a href="index.html">Home</a></li>
-                            <li>Grid 2 columns</li>
-                        </ol>
-                    </div>
-                </div> <!-- end row -->
-            </div> <!-- end container -->
+    <section class="page-title">
+        <div class="page-title-container">
+            <div class="page-title-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-xs-12">
+                            <h2>Blog single</h2>
+                            <ol class="breadcrumb">
+                                <li><a href="index.html">Home</a></li>
+                                <li>Blog single</li>
+                            </ol>
+                        </div>
+                    </div> <!-- end row -->
+                </div> <!-- end container -->
+            </div>
         </div>
-    </div>
-</section>
-<!-- end page-title -->
-<!-- start blog-pg-section -->
-<section class="blog-pg-section blog-grid-2-columns section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col col-xs-12">
-                <div class="blog-content clearfix">
-                    <div class="post format-standard-image">
-                        <div class="entry-media">
-                            <img src="images/blog/img-2.jpg" alt="">
-                        </div>
-                        <ul class="entry-meta">
-                            <li><a href="#"><i class="fi flaticon-user"></i> By: Admin</a></li>
-                            <li><a href="#"><i class="fi flaticon-tag-1"></i> Insurance, company</a></li>
-                            <li><a href="#"><i class="fi flaticon-calendar"></i>11 March 2020</a></li>
-                        </ul>
-                        <h3><a href="#">And you can design with tons of artwork and fonts yours</a></h3>
-                        <p>Samma game samples lay spread out on the table samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated</p>
-                        <a href="#" class="theme-btn-s3">Read More</a>
-                    </div>
-                    <div class="post format-gallery">
-                        <div class="entry-media post-slider">
-                            <img src="images/blog/img-3.jpg" alt="">
-                            <img src="images/blog/img-2.jpg" alt="">
-                        </div>
-                        <ul class="entry-meta">
-                            <li><a href="#"><i class="fi flaticon-user"></i> By: Admin</a></li>
-                            <li><a href="#"><i class="fi flaticon-tag-1"></i> Insurance, company</a></li>
-                            <li><a href="#"><i class="fi flaticon-calendar"></i>11 March 2020</a></li>
-                        </ul>
-                        <h3><a href="#">Won’t find anywhere and you can design with tons thousnad</a></h3>
-                        <p>Samma game samples lay spread out on the table samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated</p>
-                        <a href="#" class="theme-btn-s3">Read More</a>
-                    </div>
-                    <div class="post format-video">
-                        <div class="entry-media video-holder">
-                            <img src="images/blog/img-4.jpg" alt="">
-                            <a href="https://www.youtube.com/embed/7e90gBu4pas?autoplay=1" class="video-btn" data-type="iframe">
-                                <i class="fi flaticon-play"></i>
-                            </a>
-                        </div>
-                        <ul class="entry-meta">
-                            <li><a href="#"><i class="fi flaticon-user"></i> By: Admin</a></li>
-                            <li><a href="#"><i class="fi flaticon-tag-1"></i> Insurance, company</a></li>
-                            <li><a href="#"><i class="fi flaticon-calendar"></i>11 March 2020</a></li>
-                        </ul>
-                        <h3><a href="#">And you can design with tons of artwork and fonts yours</a></h3>
-                        <p>Samma game samples lay spread out on the table samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated</p>
-                        <a href="#" class="theme-btn-s3">Read More</a>
-                    </div>
-                    <div class="post format-standard-image">
-                        <div class="entry-media">
-                            <img src="images/blog/img-5.jpg" alt="">
-                        </div>
-                        <ul class="entry-meta">
-                            <li><a href="#"><i class="fi flaticon-user"></i> By: Admin</a></li>
-                            <li><a href="#"><i class="fi flaticon-tag-1"></i> Insurance, company</a></li>
-                            <li><a href="#"><i class="fi flaticon-calendar"></i>11 March 2020</a></li>
-                        </ul>
-                        <h3><a href="#">And you can design with tons of artwork and fonts yours</a></h3>
-                        <p>Samma game samples lay spread out on the table samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated</p>
-                        <a href="#" class="theme-btn-s3">Read More</a>
-                    </div>
-                    <div class="pagination-wrapper pagination-wrapper-center">
-                        <ul class="pg-pagination">
-                            <li>
-                                <a href="#" aria-label="Previous">
-                                    <i class="fi flaticon-back"></i>
+    </section>
+    <section class="blog-single-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col col-md-8">
+                    <div class="blog-content">
+                        @foreach(var item in Model) { 
+                        <div class="post format-standard-image">
+                            <div class="entry-media">
+                                <img src="@item.Image" alt="">
+                            </div>
+                            <ul class="entry-meta">
+                                <li><a href="#"><i class="fi flaticon-user"></i> @item.BaseEntity.AddedBy</a></li>
+                                <li><a href="#"><i class="fi flaticon-tag-1"></i> @item.Tag</a></li>
+                                <li><a href="#"><i class="fi flaticon-calendar"></i>@item.BaseEntity.AddedDate</a></li>
+                            </ul>
+                            <h2>@item.Title</h2>
+                            <p>@item.Text</p>
+                            
+
+                            
+                        </div>}
+
+                        <div class="tag-share clearfix">
+                            <div class="tag">
+                                <span>Tags: </span>
+                                <ul>
+                                    <li><a href="#">Life insurance</a></li>
+                                    <li><a href="#">Biker</a></li>
+                                </ul>
+                            </div>
+                            <div class="share">
+                                <span>Share: </span>
+                                <ul>
+                                    <li><a href="#"><i class="ti-facebook"></i></a></li>
+                                    <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+                                    <li><a href="#"><i class="ti-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="ti-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div> <!-- end tag-share -->
+
+                        <div class="author-box">
+                            <div class="author-avatar">
+                                <a href="#" target="_blank"><img src="~/images/blog-details/author.jpg" alt=""></a>
+                            </div>
+                            <div class="author-content">
+                                <a href="#" class="author-name">Michel Don</a>
+                                <p>Doing right hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather.</p>
+                                <div class="socials">
+                                    <ul class="social-link">
+                                        <li><a href="#"><i class="ti-facebook"></i></a></li>
+                                        <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+                                        <li><a href="#"><i class="ti-linkedin"></i></a></li>
+                                        <li><a href="#"><i class="ti-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> <!-- end author-box -->
+
+                        <div class="more-posts">
+                            <div class="previous-post">
+                                <a href="#">
+                                    <span class="post-control-link">Previous Post</span>
+                                    <span class="post-name">Covered Mechin  the whole of her lower arm towards the armes</span>
                                 </a>
-                            </li>
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li>
-                                <a href="#" aria-label="Next">
-                                    <i class="fi flaticon-next"></i>
+                            </div>
+                            <div class="next-post">
+                                <a href="0">
+                                    <span class="post-control-link">Next Post</span>
+                                    <span class="post-name"> Tomar name was then turned to lwindow at the dull weather.</span>
                                 </a>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
+
+                        <div class="comments-area">
+                            <div class="comments-section">
+                                <h3 class="comments-title">5 Comments</h3>
+                                <ol class="comments">
+                                    <li class="comment even thread-even depth-1" id="comment-1">
+                                        <div id="div-comment-1">
+                                            <div class="comment-theme">
+                                                <div class="comment-image"><img src="~/images/blog-details/comments-author/img-1.jpg" alt=""></div>
+                                            </div>
+                                            <div class="comment-main-area">
+                                                <div class="comment-wrapper">
+                                                    <div class="comments-meta">
+                                                        <h4>Jhon <span class="comments-date">says Jan 05, 2020 at 9:00am</span></h4>
+                                                    </div>
+                                                    <div class="comment-area">
+                                                        <p>Magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered</p>
+                                                        <div class="comments-reply">
+                                                            <a class="comment-reply-link" href="#"><span>Reply</span></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="children">
+                                            <li class="comment">
+                                                <div>
+                                                    <div class="comment-theme">
+                                                        <div class="comment-image"><img src="~/images/blog-details/comments-author/img-2.jpg" alt=""></div>
+                                                    </div>
+                                                    <div class="comment-main-area">
+                                                        <div class="comment-wrapper">
+                                                            <div class="comments-meta">
+                                                                <h4>Jhon <span class="comments-date">says Jan 05, 2020 at 9:00am</span></h4>
+                                                            </div>
+                                                            <div class="comment-area">
+                                                                <p>Magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered</p>
+                                                                <div class="comments-reply">
+                                                                    <a class="comment-reply-link" href="#"><span>Reply</span></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <ul>
+                                                    <li class="comment">
+                                                        <div>
+                                                            <div class="comment-theme">
+                                                                <div class="comment-image"><img src="~/images/blog-details/comments-author/img-3.jpg" alt=""></div>
+                                                            </div>
+                                                            <div class="comment-main-area">
+                                                                <div class="comment-wrapper">
+                                                                    <div class="comments-meta">
+                                                                        <h4>Jhon <span class="comments-date">says Jan 05, 2020 at 9:00am</span></h4>
+                                                                    </div>
+                                                                    <div class="comment-area">
+                                                                        <p>Magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy </p>
+                                                                        <div class="comments-reply">
+                                                                            <a class="comment-reply-link" href="#"><span>Reply</span></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="comment">
+                                        <div>
+                                            <div class="comment-theme">
+                                                <div class="comment-image"><img src="~/images/blog-details/comments-author/img-4.jpg" alt=""></div>
+                                            </div>
+                                            <div class="comment-main-area">
+                                                <div class="comment-wrapper">
+                                                    <div class="comments-meta">
+                                                        <h4>Jhon <span class="comments-date">says Jan 05, 2020 at 9:00am</span></h4>
+                                                    </div>
+                                                    <div class="comment-area">
+                                                        <p>Magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered</p>
+                                                        <div class="comments-reply">
+                                                            <a class="comment-reply-link" href="#"><span>Reply</span></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </div> <!-- end comments-section -->
+
+                            <div class="comment-respond">
+                                <h3 class="comment-reply-title">Add your comment</h3>
+                                <form method="post" id="commentform" class="comment-form">
+                                    <div class="form-textarea">
+                                        <textarea id="comment" placeholder="Write Your Comments..."></textarea>
+                                    </div>
+                                    <div class="form-inputs">
+                                        <input placeholder="Website" type="url">
+                                        <input placeholder="Name" type="text">
+                                        <input placeholder="Email" type="email">
+                                    </div>
+                                    <div class="form-submit">
+                                        <input id="submit" value="Post Comment" type="submit">
+                                    </div>
+                                </form>
+                            </div>
+                        </div> <!-- end comments-area -->
+                    </div>
+                </div>
+                <div class="col col-md-4">
+                    <div class="blog-sidebar">
+                        <div class="widget about-widget">
+                            <h3>About us</h3>
+                            <div class="img-holder">
+                                <img src="~/images/blog/about-widget.jpg" alt="">
+                            </div>
+                            <p>Samples lay spread out on the Samsa was a travelling salesman and above it there hung and null about  that he</p>
+                            <div class="social">
+                                <ul class="clearfix">
+                                    <li><a href="#"><i class="ti-facebook"></i></a></li>
+                                    <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+                                    <li><a href="#"><i class="ti-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="ti-pinterest"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="widget search-widget">
+                            <h3>Search</h3>
+                            <form>
+                                <div>
+                                    <input type="text" class="form-control" placeholder="Search Post..">
+                                    <button type="submit"><i class="ti-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="widget category-widget">
+                            <h3>Categories</h3>
+                            <ul>
+                                <li><a href="#">Life Insurance <span>(2)</span></a></li>
+                                <li><a href="#">Home Insurance <span>(5)</span></a></li>
+                                <li><a href="#">Health Insurance <span>(12)</span></a></li>
+                                <li><a href="#">Property insurance  <span>(5)</span></a></li>
+                                <li><a href="#">Fire Insurance <span>(8)</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="widget recent-post-widget">
+                            <h3>Recent post</h3>
+                            <div class="posts">
+                                <div class="post">
+                                    <div class="img-holder">
+                                        <img src="~/images/recent-posts/img-1.jpg" alt="">
+                                    </div>
+                                    <div class="details">
+                                        <h4><a href="#">For your insurance business, employees, or clients</a></h4>
+                                        <span class="date">11 March 2020</span>
+                                    </div>
+                                </div>
+                                <div class="post">
+                                    <div class="img-holder">
+                                        <img src="~/images/recent-posts/img-2.jpg" alt="">
+                                    </div>
+                                    <div class="details">
+                                        <h4><a href="#">Once you’ve picked your vorite, be sure to outfit your</a></h4>
+                                        <span class="date">11 March 2020</span>
+                                    </div>
+                                </div>
+                                <div class="post">
+                                    <div class="img-holder">
+                                        <img src="~/images/recent-posts/img-3.jpg" alt="">
+                                    </div>
+                                    <div class="details">
+                                        <h4><a href="#">Be prepared for life’s Once you’ve picked your vorite</a></h4>
+                                        <span class="date">11 March 2020</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget tag-widget">
+                            <h3>Tags</h3>
+                            <ul>
+                                <li><a href="#">People</a></li>
+                                <li><a href="#">Business</a></li>
+                                <li><a href="#">Life insurance</a></li>
+                                <li><a href="#">Poll insurance</a></li>
+                                <li><a href="#">Car insurance</a></li>
+                                <li><a href="#">Manfacturing</a></li>
+                            </ul>
+                        </div>
+                        <div class="widget ad-widget">
+                            <h3>Advertising Spot</h3>
+                            <div class="img-holder">
+                                <a href="#"><img src="~/images/blog/ad-img.jpg" alt=""></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div> <!-- end container -->
-</section>
-<!-- end blog-pg-section -->
+        </div> <!-- end container -->
+    </section>

@@ -50,5 +50,11 @@ namespace Repository.Repositories.ContentRepositories
         {
             return _context.Testimonials.OrderByDescending(t => t.AddedDate).ToList();
         }
+
+        public IEnumerable<CoverdAds> GetCoverdAds()
+        {
+            return _context.CovardAds.Where(s => s.Status)
+               .ToList();
+        }
     }
 }

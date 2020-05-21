@@ -18,12 +18,14 @@ public class JotexDbContext:DbContext
         public DbSet<Company> Company { get; set; }
 
         public DbSet<ContactUs> ContactUs { get; set; }
+        public DbSet<CoverdAds> CovardAds { get; set; }
         public DbSet<Faq> Faqs { get; set; }
         public DbSet<LikeableArea> LikeableAreas { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<ServiceDetail> ServiceDetails { get; set; }
         public DbSet<Setting> Settings { get; set; }
         public DbSet<SocialMediaAccount> SocialMediaAccounts { get; set; }
+        public DbSet<Review> Reviews { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<OurBlog> OurBlogs { get; set; }
         public DbSet<SliderItem> SliderItems { get; set; }

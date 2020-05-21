@@ -14,6 +14,7 @@ namespace Repository.Repositories.ContentRepositories
         IEnumerable<LikeableArea> GetLikeableArea();
         IEnumerable<OurBestPlan> GetOurBestPlans();
         IEnumerable<Testimonial> GetTestimonials();
+        IEnumerable<CoverdAds> GetCoverdAds();
 
     }
 }

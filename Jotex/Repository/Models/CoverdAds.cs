@@ -5,30 +5,23 @@ using System.Text;
 
 namespace Repository.Models
 {
-   public class OurBlog:BaseEntity
+   public class CoverdAds:BaseEntity
     {
         [Required]
-        [MaxLength(50)]
+        [MaxLength(100)]
         public string Title { get; set; }
         [Required]
-        [MaxLength(200)]
+        [MaxLength(500)]
         public string Text { get; set; }
         [Required]
-        [MaxLength(50)]
-        public string Tag { get; set; }
-       
         [MaxLength(100)]
-        public string Image { get; set; }
-      
-        [MaxLength(100)]
-        public string Video { get; set; }
+        public string CoverImage { get; set; }
         [Required]
         [MaxLength(100)]
         public string ActionText { get; set; }
         [Required]
         [MaxLength(100)]
         public string EndPoint { get; set; }
-        public ICollection<Review> Reviews { get; set; }
 
     }
 }
