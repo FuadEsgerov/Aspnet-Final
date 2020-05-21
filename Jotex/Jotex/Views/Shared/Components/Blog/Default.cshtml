@@ -1,0 +1,43 @@
+﻿@model IEnumerable<OurBlogViewModel>
+
+    <div class="content-area">
+        <div class="left-col">
+            <div class="section-title-s3">
+                <span>From our blog</span>
+                <h2>Industry knowledge</h2>
+                <p>With a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out</p>
+            </div>
+            <div class="blog-post-w-media post">
+                <div class="entry-media">
+                    <img src="~/images/blog/img-1.jpg" alt>
+                </div>
+                <p class="cat"><i class="fi flaticon-tag-1"></i> Insurance, company</p>
+                <h3><a href="#">How to shape your child’s dream into reality!</a></h3>
+                <p class="text">A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright</p>
+                <a href="#" class="theme-btn">Read more</a>
+            </div>
+        </div>
+        @{ var i = Model.Count(); }
+           
+       
+            
+           
+        
+        @foreach (var item in Model)
+
+        {
+          if(i==2)  { break; }
+
+
+                <div class="right-col">
+
+                    <div class="post">
+                        <p class="cat"><i class="fi flaticon-tag-1"></i>@item.Tag</p>
+                        <h3><a href="#">@item.Title</a></h3>
+                        <p class="text">@item.Text</p>
+                        <a href="@item.EndPoint" class="read-more">Read more</a>
+                    </div>
+
+                </div>}
+        
+    </div>

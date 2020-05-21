@@ -8,9 +8,7 @@ namespace Repository.Models
     public class Testimonial:BaseEntity
     {
 
-        [Required]
-        [MaxLength(50)]
-        public string Title { get; set; }
+   
         [Required]
         [MaxLength(500)]
         public string Review { get; set; }

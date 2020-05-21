@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Jotex.Models;
 using Microsoft.AspNetCore.Mvc;
 using Repository.Models;
 using Repository.Repositories.ContentRepositories;
@@ -22,7 +23,7 @@ namespace Jotex.ViewComponents
         {
             var about = _contentRepository.GetAbout();
 
-            var model = _mapper.Map<IEnumerable<About>, IEnumerable<About>>(about);
+            var model = _mapper.Map<IEnumerable<About>, IEnumerable<AboutViewModel>>(about);
 
             return View(model);
         }

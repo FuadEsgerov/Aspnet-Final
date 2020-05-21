@@ -45,5 +45,10 @@ namespace Repository.Repositories.ContentRepositories
             return _context.OurBestPlans.Include("Label").Where(s => s.Status)
                 .ToList();
         }
+
+        public IEnumerable<Testimonial> GetTestimonials()
+        {
+            return _context.Testimonials.OrderByDescending(t => t.AddedDate).ToList();
+        }
     }
 }

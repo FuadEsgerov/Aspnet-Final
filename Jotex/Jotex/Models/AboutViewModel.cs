@@ -29,8 +29,7 @@ namespace Jotex.Models
         [Required]
         [MaxLength(100)]
         public string EndPoint { get; set; }
-        [Required]
-        public decimal ClaimPercent { get; set; }
+  
         [Required]
         [MaxLength(100)]
         public string Image { get; set; }

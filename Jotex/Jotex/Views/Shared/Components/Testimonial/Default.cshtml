@@ -1,0 +1,15 @@
+﻿@model IEnumerable<TestimonialViewModel>
+
+    @foreach (var item in Model)
+    {
+        <div class="testimonials-slider-item">
+            <div class="grid">
+                <p>@item.Review</p>
+                <div class="quoter">
+                    <h4>@item.UserName</h4>
+                    <span>@item.UserProfession</span>
+                </div>
+            </div>
+        </div>
+
+    }
