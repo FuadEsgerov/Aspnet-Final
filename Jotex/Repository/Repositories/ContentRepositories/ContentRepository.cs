@@ -1,4 +1,5 @@
-﻿using Repository.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using Repository.Data;
 using Repository.Models;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,12 @@ namespace Repository.Repositories.ContentRepositories
         public IEnumerable<LikeableArea> GetLikeableArea()
         {
             return _context.LikeableAreas.Where(s => s.Status)
+                .ToList();
+        }
+
+        public IEnumerable<OurBestPlan> GetOurBestPlans()
+        {
+            return _context.OurBestPlans.Include("Label").Where(s => s.Status)
                 .ToList();
         }
     }

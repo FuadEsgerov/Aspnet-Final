@@ -27,6 +27,8 @@ public class JotexDbContext:DbContext
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<OurBlog> OurBlogs { get; set; }
         public DbSet<SliderItem> SliderItems { get; set; }
+        public DbSet<Label> Labels { get; set; }
+
 
     }
 }

@@ -19,6 +19,8 @@ namespace Jotex.Mapping
             CreateMap<ContactUs, ContactUsViewModel>();
             CreateMap<About, AboutViewModel>();
             CreateMap<LikeableArea, LikeableAreaViewModel>();
+            CreateMap<OurBestPlan, OurBestPlanViewModel>();
+            CreateMap<Label, LabelViewModel>();
 
         }
     }

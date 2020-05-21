@@ -35,5 +35,8 @@ namespace Repository.Models
         [Required]
         [MaxLength(50)]
         public string Experience { get; set; }
+        [Required]
+        [MaxLength(100)]
+        public string ActionText { get; set; }
     }
 }

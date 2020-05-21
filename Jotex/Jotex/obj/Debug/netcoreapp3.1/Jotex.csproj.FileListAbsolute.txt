@@ -306,3 +306,4 @@ C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Ra
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\About\Default.cshtml.g.cs
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Razor\Views\About\Index.cshtml.g.cs
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\LikeableArea\Default.cshtml.g.cs
+C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\OurBestPlan\Default.cshtml.g.cs

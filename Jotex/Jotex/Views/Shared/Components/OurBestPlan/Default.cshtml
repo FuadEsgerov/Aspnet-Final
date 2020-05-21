@@ -1,0 +1,34 @@
+﻿@model IEnumerable<OurBestPlanViewModel>
+
+
+
+
+<div class="row">
+    <div class="col col-xs-12">
+        <div class="policy-grids">
+            @foreach (var item in Model)
+            {
+                <div class="grid">
+                    @if (item.Label.Id==2)
+                    {<div class="hilight-tag">@item.Label.Text</div>}
+
+
+                    <div class="policy-header">
+                        <h5>@item.Title</h5>
+                        <i class="fi flaticon-umbrella"></i>
+                    </div>
+                    <div class="policy-body">
+                        <ul>
+                            <li>@item.Detail1</li>
+                            <li>@item.Detail2 </li>
+                            <li>@item.Detail3</li>
+                            <li>@item.Detail4</li>
+                        </ul>
+                        <a href="@item.EndPoint" class="theme-btn-s3">@item.ActionText</a>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

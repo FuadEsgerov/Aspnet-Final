@@ -12,6 +12,7 @@ namespace Repository.Repositories.ContentRepositories
         IEnumerable<Setting> GetSettings();
         IEnumerable<About> GetAbout();
         IEnumerable<LikeableArea> GetLikeableArea();
+        IEnumerable<OurBestPlan> GetOurBestPlans();
 
     }
 }

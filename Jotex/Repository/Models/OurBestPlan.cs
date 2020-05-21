@@ -7,6 +7,7 @@ namespace Repository.Models
 {
    public class OurBestPlan:BaseEntity
     {
+        public int? LabelId { get; set; }
         [Required]
         [MaxLength(50)]
         public string Title { get; set; }
@@ -14,8 +15,7 @@ namespace Repository.Models
         [MaxLength(50)]
         public string Logo { get; set; }
        
-        [MaxLength(50)]
-        public string HilightTag { get; set; }
+
         [Required]
         [MaxLength(50)]
         public string Detail1 { get; set; }
@@ -30,7 +30,11 @@ namespace Repository.Models
         public string Detail4 { get; set; }
         [Required]
         [MaxLength(100)]
+        public string ActionText { get; set; }
+        [Required]
+        [MaxLength(100)]
         public string EndPoint { get; set; }
+        public Label Label { get; set; }
 
     }
 }
