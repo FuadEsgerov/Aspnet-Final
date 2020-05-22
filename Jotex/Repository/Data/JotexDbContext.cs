@@ -15,6 +15,7 @@ public class JotexDbContext:DbContext
         public DbSet<OurAgent> Agents { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<OurBestPlan> OurBestPlans { get; set; }
+        public DbSet<Count> Counts { get; set; }
         public DbSet<Company> Company { get; set; }
 
         public DbSet<ContactUs> ContactUs { get; set; }

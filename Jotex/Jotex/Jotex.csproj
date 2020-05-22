@@ -22,4 +22,10 @@
     <ProjectReference Include="..\Repository\Repository.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\CaseStudy\" />
+    <Folder Include="Models\Service\" />
+    <Folder Include="Views\Shared\Components\About\" />
+  </ItemGroup>
+
 </Project>

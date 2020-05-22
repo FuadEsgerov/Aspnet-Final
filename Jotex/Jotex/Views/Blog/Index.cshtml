@@ -1,6 +1,4 @@
-﻿@using Jotex.Models
-@model IEnumerable<OurBlogViewModel>
-
+﻿
 
 @{
     ViewData["Title"] = "Index";
@@ -28,22 +26,7 @@
             <div class="row">
                 <div class="col col-md-8">
                     <div class="blog-content">
-                        @foreach(var item in Model) { 
-                        <div class="post format-standard-image">
-                            <div class="entry-media">
-                                <img src="@item.Image" alt="">
-                            </div>
-                            <ul class="entry-meta">
-                                <li><a href="#"><i class="fi flaticon-user"></i> @item.BaseEntity.AddedBy</a></li>
-                                <li><a href="#"><i class="fi flaticon-tag-1"></i> @item.Tag</a></li>
-                                <li><a href="#"><i class="fi flaticon-calendar"></i>@item.BaseEntity.AddedDate</a></li>
-                            </ul>
-                            <h2>@item.Title</h2>
-                            <p>@item.Text</p>
-                            
-
-                            
-                        </div>}
+<vc:blog></vc:blog>
 
                         <div class="tag-share clearfix">
                             <div class="tag">

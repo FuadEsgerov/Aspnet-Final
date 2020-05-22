@@ -22,39 +22,19 @@ namespace Repository.Repositories.ContentRepositories
                                            .ToList();
         }
    
-        public IEnumerable<Setting>GetSettings()
-        {
-            return _context.Settings.Where(s => s.Status)
-                                           .ToList();
-        }
+  
 
-        public IEnumerable<About> GetAbout()
-        {
-            return _context.Abouts.Where(s => s.Status)
-                                        .ToList();
-        }
 
-        public IEnumerable<LikeableArea> GetLikeableArea()
-        {
-            return _context.LikeableAreas.Where(s => s.Status)
-                .ToList();
-        }
 
-        public IEnumerable<OurBestPlan> GetOurBestPlans()
-        {
-            return _context.OurBestPlans.Include("Label").Where(s => s.Status)
-                .ToList();
-        }
+
+
+
 
         public IEnumerable<Testimonial> GetTestimonials()
         {
             return _context.Testimonials.OrderByDescending(t => t.AddedDate).ToList();
         }
 
-        public IEnumerable<CoverdAds> GetCoverdAds()
-        {
-            return _context.CovardAds.Where(s => s.Status)
-               .ToList();
-        }
+
     }
 }

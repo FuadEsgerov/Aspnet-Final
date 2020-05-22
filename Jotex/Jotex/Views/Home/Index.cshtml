@@ -1,8 +1,6 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
-<!-- start of hero -->
+﻿@{ ViewData["Title"] = "Home Page"; }
+@model HomeViewModel
+        <!-- start of hero -->
 <section class="hero-slider hero-style-1">
     <div class="bottom-links">
         <div>
@@ -38,7 +36,43 @@
     <div class="container">
         <div class="row">
             <div class="col col-xs-12">
-                <vc:about></vc:about>
+                <div class="inner clearfix">
+
+                    <div class="left-col">
+                        <div class="section-title">
+                            <span>About us</span>
+                            <h2>@Model.Abouts.ElementAt(0).Title</h2>
+                        </div>
+                        <div class="details">
+                            <p>@Model.Abouts.ElementAt(0).Text</p>
+                            <h5>@Model.Settings.Phone</h5>
+                        </div>
+                        <div class="fun-fact-area">
+                            <div class="fun-fact-grids clearfix">
+                                @foreach (var item in Model.Counts)
+                                {
+                                    <div class="grid">
+                                        <div class="info">
+                                            <i class="@item.Icon"></i>
+                                            <h3><span class="odometer" data-count="@item.CountNumber">00</span></h3>
+                                            <p>@item.Name</p>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-col">
+                        <div class="about-info">
+                            <h3>@Model.Abouts.ElementAt(0).Information </h3>
+                            <p>@Model.Abouts.ElementAt(0).SubDetail</p>
+                            <a href="@Model.Abouts.ElementAt(0).EndPoint" class="theme-btn">@Model.Abouts.ElementAt(0).ActionText</a>
+                        </div>
+                        <div class="img-holder">
+                            <img src="~/images/@Model.Abouts.ElementAt(0).Image" alt>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div> <!-- end container -->
@@ -95,7 +129,43 @@
 <!-- start cta-section -->
 <section class="cta-section section-padding">
     <div class="container">
-        <vc:likeable-area></vc:likeable-area>
+        @foreach (var item in Model.LikeableAreas)
+        {
+<div class="row">
+    <div class="col col-xs-12">
+        <div class="inner clearfix">
+            <div class="left-col">
+                <div class="section-title">
+                    <span>Likeable area</span>
+                    <h2>@item.Title</h2>
+                </div>
+                <div class="details">
+                    <p>@item.Information</p>
+                </div>
+            </div>
+            <div class="right-col">
+                <div class="contact-info">
+                    <p>@item.CallUs</p>
+                    <h2>@item.Phone</h2>
+                    <a href="@item.EndPoint" class="theme-btn-s3">Contact with Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col col-xs-12">
+        <div class="video-area">
+            <div class="img-holder">
+                <img src="~/images/@item.Phote" alt>
+                <div class="video-btns">
+                    <a href="@item.Video" class="video-btn" data-type="iframe" tabindex="0"><i class="fi flaticon-play"></i></a>
+                </div>
+            </div>
+            <div class="experience-text">
+                <p><span>@item.Year</span> @item.Experience</p>
+            </div>
+        </div>
+    </div>
+</div>}
     </div> <!-- end container -->
 </section>
 
@@ -111,8 +181,35 @@
                 </div>
             </div>
         </div>
-        
-        <vc:our-best-plan></vc:our-best-plan>
+
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="policy-grids">
+                    @foreach (var item in Model.OurBestPlans)
+                    {
+        <div class="grid">
+            @if (item.Label.Id == 2)
+            {<div class="hilight-tag">@item.Label.Text</div>}
+
+
+            <div class="policy-header">
+                <h5>@item.Title</h5>
+                <i class="fi flaticon-umbrella"></i>
+            </div>
+            <div class="policy-body">
+                <ul>
+                    <li>@item.Detail1</li>
+                    <li>@item.Detail2 </li>
+                    <li>@item.Detail3</li>
+                    <li>@item.Detail4</li>
+                </ul>
+                <a href="@item.EndPoint" class="theme-btn-s3">@item.ActionText</a>
+            </div>
+        </div>}
+
+                </div>
+            </div>
+        </div>
     </div> <!-- end container -->
 </section>
 <!-- end policy-section -->
@@ -174,8 +271,38 @@
     <div class="container">
         <div class="row">
             <div class="col col-xs-12">
-               
-                <vc:blog></vc:blog>
+                <div class="content-area">
+                    <div class="left-col">
+                        <div class="section-title-s3">
+                            <span>From our blog</span>
+                            <h2>Industry knowledge</h2>
+                            <p>With a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out</p>
+                        </div>
+                        <div class="blog-post-w-media post">
+                            <div class="entry-media">
+                                <img src="~/images/blog/img-1.jpg" alt="">
+                            </div>
+                            <p class="cat"><i class="fi flaticon-tag-1"></i> @Model.OurBlogs.ElementAt(0).Tag</p>
+                            <h3><a href="#">@Model.OurBlogs.ElementAt(0).Title</a></h3>
+                            <p class="text"> @Model.OurBlogs.ElementAt(0).Text</p>
+                            <a href="@Model.Abouts.ElementAt(0).EndPoint" class="theme-btn">@Model.OurBlogs.ElementAt(0).ActionText</a>
+                        </div>
+                    </div>
+                    <div class="right-col">
+                        <div class="post">
+                            <p class="cat"><i class="fi flaticon-tag-1"></i> @Model.OurBlogs.ElementAt(0).Tag</p>
+                            <h3><a href="#">@Model.OurBlogs.ElementAt(0).Title</a></h3>
+                            <p class="text"> @Model.OurBlogs.ElementAt(0).Text</p>
+                            <a href="@Model.OurBlogs.ElementAt(0).EndPoint" class="theme-btn">@Model.OurBlogs.ElementAt(0).ActionText</a>
+                        </div>
+                        <div class="post">
+                            <p class="cat"><i class="fi flaticon-tag-1"></i> @Model.OurBlogs.ElementAt(0).Tag</p>
+                            <h3><a href="#">@Model.OurBlogs.ElementAt(0).Title</a></h3>
+                            <p class="text"> @Model.OurBlogs.ElementAt(0).Text</p>
+                            <a href="@Model.OurBlogs.ElementAt(0).EndPoint" class="theme-btn">@Model.Abouts.ElementAt(0).ActionText</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div> <!-- end container -->
@@ -183,5 +310,23 @@
 <!-- end blog-section -->
 <!-- start cta-s3-section -->
 
-<vc:cover-ads></vc:cover-ads>
+@foreach (var item in Model.CoverdAds)
+{
+
+
+<section class="cta-s3-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="inner clearfix">
+                    <div class="cta-content">
+                        <h2>@item.Title</h2>
+                        <p>@item.Text </p>
+                        <a href="@item.EndPoint" class="theme-btn-s4">@item.ActionText</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- end container -->
+</section>}
 <!-- end cta-s3-section -->

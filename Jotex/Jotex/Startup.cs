@@ -15,6 +15,7 @@ using Repository.Repositories.BlogRepositories;
 using Repository.Repositories.ContactRepositories;
 using Repository.Repositories.ContentRepositories;
 using Repository.Repositories.FaqRepository;
+using Repository.Repositories.HomeRepositories;
 
 namespace Jotex
 {
@@ -33,6 +34,7 @@ namespace Jotex
             services.AddControllersWithViews();
             services.AddAutoMapper(typeof(Startup));
             services.AddTransient<IContentRepository, ContentRepository>();
+            services.AddTransient<IHomeRepository, HomeRepository>();
             services.AddTransient<IFaqRepository, FaqRepository>();
             services.AddTransient<IContactRepository, ContactRepository>();
             services.AddTransient<IBlogRepository, BlogRepository>();

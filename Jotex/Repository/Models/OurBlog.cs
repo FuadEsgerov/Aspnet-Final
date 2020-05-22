@@ -8,10 +8,10 @@ namespace Repository.Models
    public class OurBlog:BaseEntity
     {
         [Required]
-        [MaxLength(50)]
+        [MaxLength(200)]
         public string Title { get; set; }
         [Required]
-        [MaxLength(200)]
+        [MaxLength(1000)]
         public string Text { get; set; }
         [Required]
         [MaxLength(50)]
