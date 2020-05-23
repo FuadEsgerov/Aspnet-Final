@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 using Jotex.Models;
 using Jotex.Models.Blog;
 using Repository.Repositories.HomeRepositories;
-
+using Repository.Repositories.ContentRepositories;
 
 namespace Jotex.Controllers
 {
@@ -16,9 +16,11 @@ namespace Jotex.Controllers
     {
 
         private readonly IHomeRepository _homeRepository;
-        public HomeController(IHomeRepository homeRepository)
+        private readonly IContentRepository _contentRepository;
+        public HomeController(IHomeRepository homeRepository,IContentRepository contentRepository)
         {
             _homeRepository = homeRepository;
+            _contentRepository = contentRepository;
         }
 
 
@@ -33,7 +35,8 @@ namespace Jotex.Controllers
                 OurBestPlans = _homeRepository.GetOurBestPlans(),
                 Labels = _homeRepository.GetLabels(),
                 OurBlogs = _homeRepository.GetOurBlogs(),
-                 Counts = _homeRepository.GetCounts()
+                 Counts = _homeRepository.GetCounts(),
+                 Services=_contentRepository.GetServices()
 
 
 

@@ -17,6 +17,8 @@ namespace Repository.Models
         [MaxLength(100)]
         public string Logo { get; set; }
         public Company Company { get; set; }
-        public ICollection<ServiceDetail> Details { get; set; }
+        public IEnumerable<ServiceDetail> Details { get; set; }
+        public IEnumerable<ServiceSpec> Specs { get; set; }
+
     }
 }

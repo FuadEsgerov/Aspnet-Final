@@ -24,6 +24,7 @@ public class JotexDbContext:DbContext
         public DbSet<LikeableArea> LikeableAreas { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<ServiceDetail> ServiceDetails { get; set; }
+        public DbSet<ServiceSpec> ServiceSpecs { get; set; }
         public DbSet<Setting> Settings { get; set; }
         public DbSet<SocialMediaAccount> SocialMediaAccounts { get; set; }
         public DbSet<Review> Reviews { get; set; }

@@ -279,7 +279,6 @@ C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Ra
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Razor\Views\CaseStudy\CaseSingle.cshtml.g.cs
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Razor\Views\CaseStudy\Index.cshtml.g.cs
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Index.cshtml.g.cs
-C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Razor\Views\Faq\Index.cshtml.g.cs
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Razor\Views\Service\Index.cshtml.g.cs
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
@@ -305,3 +304,4 @@ C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Ra
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Page\_BreadCumb.cshtml.g.cs
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Jotex.csproj.CoreCompileInputs.cache
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Jotex.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Razor\Views\Faq\Index.cshtml.g.cs

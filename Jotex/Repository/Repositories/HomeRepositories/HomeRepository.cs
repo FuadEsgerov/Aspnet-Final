@@ -48,7 +48,7 @@ namespace Repository.Repositories.HomeRepositories
 
         public IEnumerable<OurBlog> GetOurBlogs()
         {
-            return _context.OurBlogs.OrderByDescending(t => t.AddedDate).ToList();
+            return _context.OurBlogs.OrderByDescending(t => t.AddedDate).Take(2).ToList();
         }
 
         public IEnumerable<Count> GetCounts()

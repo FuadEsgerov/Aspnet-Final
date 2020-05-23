@@ -89,39 +89,20 @@
                 </div>
             </div>
             <div class="col col-xs-12">
+              
                 <div class="service-slider">
-                    <div class="grid">
-                        <a href="#">
-                            <i class="fi flaticon-life"></i>
-                            <h3>Life Insurance</h3>
-                        </a>
-                    </div>
-                    <div class="grid">
-                        <a href="#">
-                            <i class="fi flaticon-car"></i>
-                            <h3>Car insurance</h3>
-                        </a>
-                    </div>
-                    <div class="grid">
-                        <a href="#">
-                            <i class="fi flaticon-shield-1"></i>
-                            <h3>Health insurance</h3>
-                        </a>
-                    </div>
-                    <div class="grid">
-                        <a href="#">
-                            <i class="fi flaticon-house"></i>
-                            <h3>Home insurance</h3>
-                        </a>
-                    </div>
-                    <div class="grid">
-                        <a href="#">
-                            <i class="fi flaticon-life"></i>
-                            <h3>Life Insurance</h3>
-                        </a>
-                    </div>
-                </div>
-            </div>
+                    @foreach (var item in Model.Services)
+                    {
+                <div class="grid">
+
+                    <a href="@item.Id">
+                        <i class="@item.Logo"></i>
+                        <h3>@item.Name</h3>
+                    </a>
+                </div>}
+
+                            </div>
+                        </div>
         </div>
     </div> <!-- end container -->
 </section>
@@ -289,18 +270,14 @@
                         </div>
                     </div>
                     <div class="right-col">
+                        @foreach(var item in Model.OurBlogs) { 
                         <div class="post">
-                            <p class="cat"><i class="fi flaticon-tag-1"></i> @Model.OurBlogs.ElementAt(0).Tag</p>
-                            <h3><a href="#">@Model.OurBlogs.ElementAt(0).Title</a></h3>
-                            <p class="text"> @Model.OurBlogs.ElementAt(0).Text</p>
-                            <a href="@Model.OurBlogs.ElementAt(0).EndPoint" class="theme-btn">@Model.OurBlogs.ElementAt(0).ActionText</a>
-                        </div>
-                        <div class="post">
-                            <p class="cat"><i class="fi flaticon-tag-1"></i> @Model.OurBlogs.ElementAt(0).Tag</p>
-                            <h3><a href="#">@Model.OurBlogs.ElementAt(0).Title</a></h3>
-                            <p class="text"> @Model.OurBlogs.ElementAt(0).Text</p>
-                            <a href="@Model.OurBlogs.ElementAt(0).EndPoint" class="theme-btn">@Model.Abouts.ElementAt(0).ActionText</a>
-                        </div>
+                            <p class="cat"><i class="fi flaticon-tag-1"></i> @item.Tag</p>
+                            <h3><a href="#">@item.Title</a></h3>
+                            <p class="text"> @item.Text</p>
+                            <a href="@item.EndPoint" class="theme-btn">@item.ActionText</a>
+                        </div>}
+                        
                     </div>
                 </div>
             </div>

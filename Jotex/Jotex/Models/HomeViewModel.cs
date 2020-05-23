@@ -13,6 +13,7 @@ namespace Jotex.Models
         public IEnumerable<CoverdAds> CoverdAds { get; set; }
 
         public IEnumerable<LikeableArea> LikeableAreas { get; set; }
+        public IEnumerable<Service> Services { get; set; }
 
         public IEnumerable<OurBestPlan> OurBestPlans { get; set; }
         public IEnumerable<Label> Labels { get; set; }

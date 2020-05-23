@@ -27,17 +27,14 @@ namespace Repository.Repositories.ContentRepositories
         {
             return _context.Settings.Where(s => s.Status).FirstOrDefault();
         }
-
-
-
-
-
-
         public IEnumerable<Testimonial> GetTestimonials()
         {
             return _context.Testimonials.OrderByDescending(t => t.AddedDate).ToList();
         }
 
-
+        public IEnumerable<Service> GetServices()
+        {
+            return _context.Services.Include(s => s.Details).Include(s => s.Specs).Where(s => s.Status).ToList();
+        }
     }
 }

@@ -13,7 +13,8 @@ namespace Repository.Repositories.ContentRepositories
 
 
         IEnumerable<Testimonial> GetTestimonials();
-    
+        IEnumerable<Service> GetServices();
+
 
     }
 }
