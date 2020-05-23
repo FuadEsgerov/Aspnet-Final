@@ -21,9 +21,12 @@ namespace Repository.Repositories.ContentRepositories
             return _context.SliderItems.Where(s => s.Status)
                                            .ToList();
         }
-   
-  
 
+
+        public Setting GetSettings()
+        {
+            return _context.Settings.Where(s => s.Status).FirstOrDefault();
+        }
 
 
 

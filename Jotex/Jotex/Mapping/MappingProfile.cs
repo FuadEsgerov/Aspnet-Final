@@ -14,7 +14,7 @@ namespace Jotex.Mapping
         {
            
             CreateMap <SliderItem, SliderItemViewModel>();
-            CreateMap<Faq, FaqViewModel>();
+      
            
             CreateMap<ContactUs, ContactUsViewModel>();
             CreateMap<About, AboutViewModel>();

@@ -24,7 +24,6 @@
 
   <ItemGroup>
     <Folder Include="Models\CaseStudy\" />
-    <Folder Include="Models\Service\" />
     <Folder Include="Views\Shared\Components\About\" />
   </ItemGroup>
 
