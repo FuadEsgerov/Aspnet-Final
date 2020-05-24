@@ -19,6 +19,7 @@ namespace Jotex.Models
         public IEnumerable<Label> Labels { get; set; }
         public IEnumerable<OurBlog> OurBlogs { get; set; }
         public IEnumerable<Count> Counts { get; set; }
+        public IEnumerable<OurAgent> Agents { get; set; }
 
     }
 }

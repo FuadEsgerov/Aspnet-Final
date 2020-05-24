@@ -19,6 +19,7 @@ namespace Repository.Models
         public Company Company { get; set; }
         public IEnumerable<ServiceDetail> Details { get; set; }
         public IEnumerable<ServiceSpec> Specs { get; set; }
+        public IEnumerable<OurAgent> Agents { get; set; }
 
     }
 }

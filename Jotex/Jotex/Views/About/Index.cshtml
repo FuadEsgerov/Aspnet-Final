@@ -1,4 +1,4 @@
-﻿
+﻿@model AboutViewModel
 @{
     ViewData["Title"] = "Index";
 }
@@ -32,15 +32,15 @@
                     <img src="images/logo-3.png" alt="">
                 </div>
                 <div class="info">
-                    <h3>88123475754</h3>
-                    <h4>demo@example.com</h4>
+                    <h3>@Model.Settings.Phone</h3>
+                    <h4>@Model.Settings.Email</h4>
                     <a href="#" class="theme-btn">More About Us</a>
                 </div>
             </div>
             <div class="col col-md-5">
                 <div class="details-text mt">
-                    <h4>Since 1950, we are providing the insurance solution for our client’s and  we are very successfull about</h4>
-                    <p>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look outIt showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer</p>
+                    <h4>@Model.Abouts.ElementAt(0).Title</h4>
+                    <p>@Model.Abouts.ElementAt(0).Text</p>
                 </div>
             </div>
             <div class="col col-md-4">
@@ -124,74 +124,23 @@
                                 <h2>Our Agents</h2>
                             </div>
                             <div class="info">
-                                <h3>88123475754</h3>
-                                <h4>demo@example.com</h4>
+                                <h3>@Model.Settings.NeedHelpNumber</h3>
+                                <h4>@Model.Settings.Email</h4>
                                 <a href="#" class="theme-btn">More About Us</a>
                             </div>
                         </div>
+                        @foreach(var item in Model.Agents) {
                         <div class="grid">
                             <div class="img-holder">
-                                <img src="images/agents/img-1.jpg" alt="">
+                                <img src="images/agents/@item.Image" alt="">
                             </div>
                             <div class="agent-info">
-                                <h4>Michel Jhon</h4>
-                                <p>Marketing Expert</p>
+                                <h4>@item.Name @item.SurName</h4>
+                                <p>@item.Job</p>
                             </div>
                         </div>
-                        <div class="grid">
-                            <div class="img-holder">
-                                <img src="images/agents/img-2.jpg" alt="">
-                            </div>
-                            <div class="agent-info">
-                                <h4>Michel Jhon</h4>
-                                <p>Marketing Expert</p>
-                            </div>
-                        </div>
-                        <div class="grid">
-                            <div class="img-holder">
-                                <img src="images/agents/img-3.jpg" alt="">
-                            </div>
-                            <div class="agent-info">
-                                <h4>Michel Jhon</h4>
-                                <p>Marketing Expert</p>
-                            </div>
-                        </div>
-                        <div class="grid">
-                            <div class="img-holder">
-                                <img src="images/agents/img-4.jpg" alt="">
-                            </div>
-                            <div class="agent-info">
-                                <h4>Michel Jhon</h4>
-                                <p>Marketing Expert</p>
-                            </div>
-                        </div>
-                        <div class="grid">
-                            <div class="img-holder">
-                                <img src="images/agents/img-5.jpg" alt="">
-                            </div>
-                            <div class="agent-info">
-                                <h4>Michel Jhon</h4>
-                                <p>Marketing Expert</p>
-                            </div>
-                        </div>
-                        <div class="grid">
-                            <div class="img-holder">
-                                <img src="images/agents/img-6.jpg" alt="">
-                            </div>
-                            <div class="agent-info">
-                                <h4>Michel Jhon</h4>
-                                <p>Marketing Expert</p>
-                            </div>
-                        </div>
-                        <div class="grid">
-                            <div class="img-holder">
-                                <img src="images/agents/img-7.jpg" alt="">
-                            </div>
-                            <div class="agent-info">
-                                <h4>Michel Jhon</h4>
-                                <p>Marketing Expert</p>
-                            </div>
-                        </div>
+                        }
+                       
                     </div>
                 </div>
             </div>
@@ -228,30 +177,5 @@
 </section>
 <!-- end testimonials-section-s2 -->
 <!-- start partners-section -->
-<section class="partners-section">
-    <h2 class="hidden">Partners</h2>
-    <div class="container">
-        <div class="row">
-            <div class="col col-xs-12">
-                <div class="partner-grids partners-slider">
-                    <div class="grid">
-                        <img src="images/partners/img-1.png" alt="">
-                    </div>
-                    <div class="grid">
-                        <img src="images/partners/img-2.png" alt="">
-                    </div>
-                    <div class="grid">
-                        <img src="images/partners/img-3.png" alt="">
-                    </div>
-                    <div class="grid">
-                        <img src="images/partners/img-4.png" alt="">
-                    </div>
-                    <div class="grid">
-                        <img src="images/partners/img-5.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- end container -->
-</section>
+<vc:brand></vc:brand>
 <!-- end partners-section -->

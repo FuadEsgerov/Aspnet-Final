@@ -305,3 +305,4 @@ C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Ra
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Jotex.csproj.CoreCompileInputs.cache
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Jotex.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Razor\Views\Faq\Index.cshtml.g.cs
+C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Brand\Default.cshtml.g.cs

@@ -5,8 +5,10 @@ using System.Text;
 
 namespace Repository.Repositories.BlogRepositories
 {
-   public interface IBlogRepository
+   public interface IAboutRepository
     {
-        IEnumerable<OurBlog> GetOurBlogs();
+        IEnumerable<About> GetAbouts();
+        IEnumerable<OurAgent> GetOurAgents();
+        Setting GetSettings();
     }
 }

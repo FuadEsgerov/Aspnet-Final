@@ -1,0 +1,21 @@
+﻿@model IEnumerable<BrandViewModel>
+
+<!-- start partners-section -->
+<section class="partners-section">
+    <h2 class="hidden">Partnyorlarr</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="partner-grids partners-slider">
+                    @foreach (var item in Model)
+                    {
+                        <div class="grid">
+                            <img src="images/partners/@item.Logo" alt="">
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div> <!-- end container -->
+</section>
+<!-- end partners-section -->

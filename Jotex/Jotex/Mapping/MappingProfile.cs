@@ -20,8 +20,9 @@ namespace Jotex.Mapping
             CreateMap<About, AboutViewModel>();
           
             CreateMap<Testimonial, TestimonialViewModel>();
-            CreateMap<OurBlog, OurBlogViewModel>();
-           
+        
+            CreateMap<Brand, BrandViewModel>();
+
 
         }
     }

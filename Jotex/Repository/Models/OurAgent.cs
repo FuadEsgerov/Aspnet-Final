@@ -8,9 +8,10 @@ namespace Repository.Models
 {
     public class OurAgent:BaseEntity
     {
-     
-      
         [Required]
+        public int ServiceId { get; set; }
+
+      
         [MaxLength(50)]
         public string Name { get; set; }
         [Required]
@@ -22,6 +23,9 @@ namespace Repository.Models
         [Required]
         [MaxLength(100)]
         public string Image { get; set; }
+
+      
+        public Service Service { get; set; }
 
 
     }

@@ -36,5 +36,14 @@ namespace Repository.Repositories.ContentRepositories
         {
             return _context.Services.Include(s => s.Details).Include(s => s.Specs).Where(s => s.Status).ToList();
         }
+        public IEnumerable<Brand> GetBrands()
+        {
+            return _context.Brands.OrderByDescending(b => b.AddedDate).ToList();
+        }
+
+        public IEnumerable<OurAgent> GetOurAgents()
+        {
+            return _context.Agents.Include(a=>a.Service).Where(a => a.Status).Take(7).ToList();
+        }
     }
 }

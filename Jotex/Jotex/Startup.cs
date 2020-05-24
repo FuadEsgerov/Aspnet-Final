@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Repository.Data;
 using Repository.Repositories.BlogRepositories;
+using Repository.Repositories.CaseRepositories;
 using Repository.Repositories.ContactRepositories;
 using Repository.Repositories.ContentRepositories;
 using Repository.Repositories.FaqRepository;
@@ -37,7 +38,8 @@ namespace Jotex
             services.AddTransient<IHomeRepository, HomeRepository>();
             services.AddTransient<IFaqRepository, FaqRepository>();
             services.AddTransient<IContactRepository, ContactRepository>();
-            services.AddTransient<IBlogRepository, BlogRepository>();
+            services.AddTransient<IAboutRepository, AboutRepository>();
+            services.AddTransient<ICaseRepository, CaseRepository>();
             services.AddDbContext<JotexDbContext>(options =>
       options.UseSqlServer(Configuration.GetConnectionString("Default"),
       x => x.MigrationsAssembly("Repository")));

@@ -1,4 +1,6 @@
 ﻿@model ServiceViewModel
+@{ var a = 0; }
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -28,86 +30,107 @@
             <div class="col col-xs-12">
                 <div class="service-single-tab">
                     <ul class="nav tab-links clearfix">
+
                         @foreach (var item in Model.Services)
                         {
-                        <li >
-                            <a href="#@item.Id" data-toggle="tab">
-                                <i class="@item.Logo"></i>
-                                <h3>@item.Name</h3>
-                            </a>
-                        </li>}
+                            <li class="active">
+                                <a href="#@item.Id" data-toggle="tab">
+                                    <i class="@item.Logo"></i>
+                                    <h3>@item.Name</h3>
+                                </a>
+                            </li>
+                            break;
+                        }
+                        @foreach (var item in Model.Services)
+                        {
+                            a++;
+                            if (a == 1)
+                            {
+                                continue;
+                            }
+                            <li>
+                                <a href="#@item.Id" data-toggle="tab">
+                                    <i class="@item.Logo"></i>
+                                    <h3>@item.Name</h3>
+                                </a>
+                            </li>
+
+
+                        }
+
 
                     </ul>
 
                     <div class="tab-content">
                         @foreach (var item in Model.Services)
 
-                        { 
+                        {
+                            @foreach (var detail in item.Details) {
 
-                    <div class="tab-pane fade in active" id="@item.Id">
-                        <div class="content-area clearfix">
-                            <div class="grid info-grid">
-                                <h3>@item.Name</h3>
-                                <p>@item.Details.ElementAt(0).Detail</p>
-                                <p><strong>@item.Details.ElementAt(0).SubDetail</strong></p>
-                                <table>
-                                    <tbody>
+                                <div class="tab-pane fade in active" id="@item.Id">
+                                    <div class="content-area clearfix">
+                                        <div class="grid info-grid">
+                                            <h3>@item.Name</h3>
+                                            <p>@detail.Detail</p>
+                                            <p><strong>@detail.SubDetail</strong></p>
+                                            <table>
+                                                <tbody>
 
-                                        @foreach (var spec in item.Specs)
-                                        {
-                                            <tr>
-                                                <td>@spec.Key</td>
-                                                <td>@spec.Value</td>
-                                            </tr>
-                                        }
+                                                    @foreach (var spec in item.Specs)
+                                                    {
+                                                        <tr>
+                                                            <td>@spec.Key</td>
+                                                            <td>@spec.Value</td>
+                                                        </tr>
+                                                    }
 
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="grid">
-                                <img src="images/@item.Details.ElementAt(0).Image" alt="Image">
-                            </div>
-                        </div>
-                        <div class="bottom-info">
-                            <div class="text">
-                                <h4>@item.Details.ElementAt(0).Information</h4>
-                                <p>Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather</p>
-                            </div>
-                            <div class="pdf-dwn-area">
-                                <a href="@item.Details.ElementAt(0).Document">
-                                    <i class="ti-receipt"></i>
-                                    <h5>General Insurance Conditions</h5>
-                                    <p>Document size: 34kb</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="features-grid clearfix">
-                            <div class="grid">
-                                <div class="icon">
-                                    <i class="fi flaticon-house"></i>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="grid">
+                                            <img src="images/@detail.Image" alt="Image">
+                                        </div>
+                                    </div>
+                                    <div class="bottom-info">
+                                        <div class="text">
+                                            <h4>@detail.Information</h4>
+                                            <p>@detail.SubDetail</p>
+                                        </div>
+                                        <div class="pdf-dwn-area">
+                                            <a href="@detail.Document">
+                                                <i class="ti-receipt"></i>
+                                                <h5>@item.Name haqqında məlumat dosyası</h5>
+                                                <p>Document size: 34kb</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="features-grid clearfix">
+                                        <div class="grid">
+                                            <div class="icon">
+                                                <i class="fi flaticon-house"></i>
+                                            </div>
+                                            <h3>House protected</h3>
+                                            <p>Window at the dull weather</p>
+                                        </div>
+                                        <div class="grid">
+                                            <div class="icon">
+                                                <i class="fi flaticon-umbrella-1"></i>
+                                            </div>
+                                            <h3>Helth protected</h3>
+                                            <p>Window at the dull weather</p>
+                                        </div>
+                                        <div class="grid">
+                                            <div class="icon">
+                                                <i class="fi flaticon-cost"></i>
+                                            </div>
+                                            <h3>Small Premium</h3>
+                                            <p>Window at the dull weather</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <h3>House protected</h3>
-                                <p>Window at the dull weather</p>
-                            </div>
-                            <div class="grid">
-                                <div class="icon">
-                                    <i class="fi flaticon-umbrella-1"></i>
-                                </div>
-                                <h3>Helth protected</h3>
-                                <p>Window at the dull weather</p>
-                            </div>
-                            <div class="grid">
-                                <div class="icon">
-                                    <i class="fi flaticon-cost"></i>
-                                </div>
-                                <h3>Small Premium</h3>
-                                <p>Window at the dull weather</p>
-                            </div>
-                        </div>
+                        } }
+
                     </div>
-                        }
-                      
-                                </div>
                 </div>
             </div>
         </div>
@@ -134,7 +157,7 @@
             <div class="col-lg-8">
                 <div class="testimonials-slider-holder">
                     <div class="testimonials-slider-s2">
-    <vc:testimonial></vc:testimonial>
+                        <vc:testimonial></vc:testimonial>
                     </div>
                 </div>
             </div>

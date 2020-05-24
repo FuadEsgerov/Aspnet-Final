@@ -1,4 +1,4 @@
-﻿
+﻿@model CaseViewModel
 @{
     ViewData["Title"] = "CaseSingle";
 }
@@ -28,22 +28,21 @@
         <div class="row">
             <div class="col col-md-6">
                 <div class="img-holder">
-                    <img src="~/images/project-single/img-1.jpg" alt="">
+                    <img src="~/images/project-single/@Model.CaseStudies.ElementAt(0).Image" alt="">
                 </div>
             </div>
             <div class="col col-md-6">
                 <div class="project-details">
-                    <h2>Life insurance and Minimum Maintenance Standards</h2>
-                    <h3>Window dull never fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look  out the window at the dull weather</h3>
-                    <p>Waved about helplessly as he looked. "What's happened to me?" he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table Samsa was a travelling salesman - and above it there hung a picture that he had recently</p>
+                    <h2>@Model.CaseStudies.ElementAt(0).Title</h2>
+                    <h3>@Model.CaseStudies.ElementAt(0).Detail</h3>
+                    <p>@Model.CaseStudies.ElementAt(0).SubDetail</p>
                     <div class="project-info">
                         <ul class="clearfix">
-                            <li><span>Client:</span> Jon dow</li>
-                            <li><span>Location:</span> Austria</li>
-                            <li><span>Date:</span> Jan 25, 2020</li>
-                            <li><span>Catetory:</span> Life insurance</li>
-                            <li><span>Time:</span> 6 Month</li>
-                            <li><span>Tags:</span> Insurance, Policy </li>
+                            @foreach (var item in Model.CaseStudies)
+                            {
+                            @foreach(var spec in item.Specs){ 
+                            <li><span>@spec.Key</span> @spec.Value</li>
+                            }}
                         </ul>
                     </div>
                 </div>
@@ -66,13 +65,13 @@
 
                     <div class="tab-content">
                         <div class="tab-pane fade in active" id="precautions">
-                            <p>Samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weatherSamples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer</p>
+                            <p>@Model.CaseStudies.ElementAt(0).Challenge</p>
                         </div>
                         <div class="tab-pane fade" id="intelligence">
-                            <p>Samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weatherSamples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer</p>
+                            <p>@Model.CaseStudies.ElementAt(0).Solution</p>
                         </div>
                         <div class="tab-pane fade" id="specializations">
-                            <p>Samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weatherSamples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer</p>
+                            <p>@Model.CaseStudies.ElementAt(0).Result</p>
                         </div>
                     </div>
                 </div>
@@ -83,39 +82,21 @@
                 <div class="related-case-studies">
                     <h2>Related Case Studies</h2>
                     <div class="case-studies-grids">
-                        <div class="grid">
-                            <div class="img-holder">
-                                <img src="~/images/case-studies/img-1.jpg" alt="">
-                            </div>
-                            <div class="overlay">
-                                <div class="content">
-                                    <p class="cat">Insurance</p>
-                                    <h3><a href="#">Life insurance</a></h3>
-                                </div>
+                        @foreach (var item in Model.OurAgents)
+                        {
+                    <div class="grid">
+                        <div class="img-holder">
+                            <img src="~/uploads/@item.Image" alt="@item.Image">
+                        </div>
+                        <div class="overlay">
+                            <div class="content">
+                                <p class="cat">Insurance</p>
+
+                                <h3><a href="/Service/Index">@item.Service.Name</a></h3>
                             </div>
                         </div>
-                        <div class="grid">
-                            <div class="img-holder">
-                                <img src="~/images/case-studies/img-2.jpg" alt="">
-                            </div>
-                            <div class="overlay">
-                                <div class="content">
-                                    <p class="cat">Insurance</p>
-                                    <h3><a href="#">Life insurance</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid">
-                            <div class="img-holder">
-                                <img src="~/images/case-studies/img-3.jpg" alt="">
-                            </div>
-                            <div class="overlay">
-                                <div class="content">
-                                    <p class="cat">Insurance</p>
-                                    <h3><a href="#">Life insurance</a></h3>
-                                </div>
-                            </div>
-                        </div>
+                    </div>            }
+
                     </div>
                 </div>
             </div>

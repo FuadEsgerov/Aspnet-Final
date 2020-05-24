@@ -1,4 +1,4 @@
-﻿
+﻿@model CaseViewModel
 @{
     ViewData["Title"] = "Index";
 }
@@ -36,72 +36,22 @@
     </div> <!-- end container -->
     <div class="content-area">
         <div class="case-studies-grids case-studies-slider">
-            <div class="grid">
-                <div class="img-holder">
-                    <img src="images/case-studies/img-1.jpg" alt="">
-                </div>
-                <div class="overlay">
-                    <div class="content">
-                        <p class="cat">Insurance</p>
-                        <h3><a href="#">Life insurance</a></h3>
+
+            @foreach (var item in Model.OurAgents)
+            {
+                <div class="grid">
+                    <div class="img-holder">
+                        <img src="~/uploads/@item.Image" alt="@item.Image">
+                    </div>
+                    <div class="overlay">
+                        <div class="content">
+                            <p class="cat">Insurance</p>
+                            
+                        <h3><a href="/Service/Index">@item.Service.Name</a></h3>
+                                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="grid">
-                <div class="img-holder">
-                    <img src="images/case-studies/img-2.jpg" alt="">
-                </div>
-                <div class="overlay">
-                    <div class="content">
-                        <p class="cat">Insurance</p>
-                        <h3><a href="#">Life insurance</a></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="img-holder">
-                    <img src="images/case-studies/img-3.jpg" alt="">
-                </div>
-                <div class="overlay">
-                    <div class="content">
-                        <p class="cat">Insurance</p>
-                        <h3><a href="#">Life insurance</a></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="img-holder">
-                    <img src="images/case-studies/img-4.jpg" alt="">
-                </div>
-                <div class="overlay">
-                    <div class="content">
-                        <p class="cat">Insurance</p>
-                        <h3><a href="#">Life insurance</a></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="img-holder">
-                    <img src="images/case-studies/img-5.jpg" alt="">
-                </div>
-                <div class="overlay">
-                    <div class="content">
-                        <p class="cat">Insurance</p>
-                        <h3><a href="#">Life insurance</a></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="img-holder">
-                    <img src="images/case-studies/img-6.jpg" alt="">
-                </div>
-                <div class="overlay">
-                    <div class="content">
-                        <p class="cat">Insurance</p>
-                        <h3><a href="#">Life insurance</a></h3>
-                    </div>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </section>
