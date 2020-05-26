@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Repository.Repositories.HomeRepositories
+namespace Repository.Repositories.BlogRepositories
 {
    public class HomeRepository:IHomeRepository
     {

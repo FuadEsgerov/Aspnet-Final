@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Jotex.Models;
 using Microsoft.AspNetCore.Mvc;
 using Repository.Repositories.FaqRepository;
-using Repository.Repositories.HomeRepositories;
+using Repository.Repositories.BlogRepositories;
 
 namespace Jotex.Controllers
 {

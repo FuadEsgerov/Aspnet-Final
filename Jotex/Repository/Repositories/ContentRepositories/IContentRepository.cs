@@ -13,6 +13,9 @@ namespace Repository.Repositories.ContentRepositories
         IEnumerable<Testimonial> GetTestimonials();
         IEnumerable<Service> GetServices();
         IEnumerable<OurAgent> GetOurAgents();
+        IEnumerable<OurBlog> GetOurBlogs(int take,int skip);
+        IEnumerable<OurBlog> FindOurBlogs(int blogId);
+        IEnumerable<Review> GetReviews(int blogId);
 
 
     }

@@ -16,7 +16,7 @@ using Repository.Repositories.CaseRepositories;
 using Repository.Repositories.ContactRepositories;
 using Repository.Repositories.ContentRepositories;
 using Repository.Repositories.FaqRepository;
-using Repository.Repositories.HomeRepositories;
+using Repository.Repositories.BlogRepositories;
 
 namespace Jotex
 {

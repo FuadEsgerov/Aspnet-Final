@@ -1,26 +1,8 @@
 ﻿@model AboutViewModel
-@{
-    ViewData["Title"] = "Index";
-}
+@{ ViewData["Title"] = "Haqqımızda"; }
 
 <!-- start page-title -->
-<section class="page-title">
-    <div class="page-title-container">
-        <div class="page-title-wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col col-xs-12">
-                        <h2>About us</h2>
-                        <ol class="breadcrumb">
-                            <li><a href="index.html">Home</a></li>
-                            <li>About us</li>
-                        </ol>
-                    </div>
-                </div> <!-- end row -->
-            </div> <!-- end container -->
-        </div>
-    </div>
-</section>
+@await Html.PartialAsync("../Shared/Page/_BreadCrumb")
 <!-- end page-title -->
 <!-- start about-section-s4 -->
 <section class="about-section-s4 section-padding">
@@ -129,18 +111,18 @@
                                 <a href="#" class="theme-btn">More About Us</a>
                             </div>
                         </div>
-                        @foreach(var item in Model.Agents) {
-                        <div class="grid">
-                            <div class="img-holder">
-                                <img src="images/agents/@item.Image" alt="">
-                            </div>
-                            <div class="agent-info">
-                                <h4>@item.Name @item.SurName</h4>
-                                <p>@item.Job</p>
-                            </div>
-                        </div>
-                        }
-                       
+                        @foreach (var item in Model.Agents)
+                        {
+            <div class="grid">
+                <div class="img-holder">
+                    <img src="images/agents/@item.Image" alt="">
+                </div>
+                <div class="agent-info">
+                    <h4>@item.Name @item.SurName</h4>
+                    <p>@item.Job</p>
+                </div>
+            </div>}
+
                     </div>
                 </div>
             </div>
@@ -168,7 +150,7 @@
             <div class="col-lg-8">
                 <div class="testimonials-slider-holder">
                     <div class="testimonials-slider-s2">
-   <vc:testimonial></vc:testimonial>
+                        <vc:testimonial></vc:testimonial>
                     </div>
                 </div>
             </div>

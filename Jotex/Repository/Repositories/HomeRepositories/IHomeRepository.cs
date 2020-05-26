@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Repository.Repositories.HomeRepositories
+namespace Repository.Repositories.BlogRepositories
 {
    public interface IHomeRepository
     {

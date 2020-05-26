@@ -19,6 +19,6 @@ namespace Repository.Models
         [Required]
         
         public int OurBlogId { get; set; }
-        public OurBlog OurBlog { get; set; }
+        public virtual OurBlog OurBlog { get; set; }
     }
 }

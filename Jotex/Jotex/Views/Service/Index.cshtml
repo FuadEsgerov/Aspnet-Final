@@ -1,27 +1,13 @@
 ﻿@model ServiceViewModel
+
 @{ var a = 0; }
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Xidmətlər";
 }
 <!-- start page-title -->
-<section class="page-title">
-    <div class="page-title-container">
-        <div class="page-title-wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col col-xs-12">
-                        <h2>Service single</h2>
-                        <ol class="breadcrumb">
-                            <li><a href="index.html">Home</a></li>
-                            <li>Service single</li>
-                        </ol>
-                    </div>
-                </div> <!-- end row -->
-            </div> <!-- end container -->
-        </div>
-    </div>
-</section>
+@await Html.PartialAsync("../Shared/Page/_BreadCrumb" )
+
 <!-- end page-title -->
 <!-- start service-single-section -->
 <section class="service-single-section section-padding">
@@ -65,7 +51,8 @@
                         @foreach (var item in Model.Services)
 
                         {
-                            @foreach (var detail in item.Details) {
+                            @foreach (var detail in item.Details)
+                            {
 
                                 <div class="tab-pane fade in active" id="@item.Id">
                                     <div class="content-area clearfix">
@@ -128,7 +115,7 @@
                                         </div>
                                     </div>
                                 </div>
-                        } }
+                            }}
 
                     </div>
                 </div>

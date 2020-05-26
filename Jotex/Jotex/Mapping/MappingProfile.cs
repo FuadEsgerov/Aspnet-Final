@@ -23,6 +23,11 @@ namespace Jotex.Mapping
         
             CreateMap<Brand, BrandViewModel>();
 
+            CreateMap<OurBlog, BlogViewModel>();
+            CreateMap<OurBlog, OurBlogViewModel>();
+            CreateMap<Review, OurBlogViewModel>();
+            CreateMap<Review, ReviewViewModel>();
+
 
         }
     }

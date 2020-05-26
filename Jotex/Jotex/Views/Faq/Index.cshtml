@@ -1,27 +1,9 @@
 ﻿@model FaqViewModel
 
-@{
-    ViewData["Title"] = "Index";
-}
+@{ ViewData["Title"] = "Faq"; }
 
 <!-- start page-title -->
-<section class="page-title">
-    <div class="page-title-container">
-        <div class="page-title-wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col col-xs-12">
-                        <h2>FAQ</h2>
-                        <ol class="breadcrumb">
-                            <li><a href="index.html">Home</a></li>
-                            <li>FAQ</li>
-                        </ol>
-                    </div>
-                </div> <!-- end row -->
-            </div> <!-- end container -->
-        </div>
-    </div>
-</section>
+@await Html.PartialAsync("../Shared/Page/_BreadCrumb")
 <!-- end page-title -->
 <!-- start faq-pg-section -->
 <section class="faq-pg-section section-padding">
@@ -40,17 +22,16 @@
                 <div class="panel-group faq-accordion theme-accordion-s1" id="accordion">
                     @foreach (var item in Model.Faqs)
                     {
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="true">@item.Question</a>
-                            </div>
-                            <div id="collapse-1" class="panel-collapse collapse in">
-                                <div class="panel-body">
-                                    <p>@item.Answer </p>
-                                </div>
-                            </div>
-                        </div>
-                    }
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="true">@item.Question</a>
+            </div>
+            <div id="collapse-1" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <p>@item.Answer </p>
+                </div>
+            </div>
+        </div>}
 
 
                 </div>

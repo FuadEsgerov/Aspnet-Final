@@ -45,5 +45,20 @@ namespace Repository.Repositories.ContentRepositories
         {
             return _context.Agents.Include(a=>a.Service).Where(a => a.Status).Take(7).ToList();
         }
+
+        public IEnumerable<OurBlog> GetOurBlogs(int take, int skip)
+        {
+            return _context.OurBlogs.OrderByDescending(t => t.AddedDate).Skip(skip).Take(take).ToList();
+        }
+
+        public IEnumerable<OurBlog> FindOurBlogs(int blogId)
+        {
+            return _context.OurBlogs.Where(b => b.Id == blogId).ToList();
+        }
+
+        public IEnumerable<Review> GetReviews(int blogId)
+        {
+            return _context.Reviews.Where(r => r.OurBlogId == blogId).ToList();
+        }
     }
 }

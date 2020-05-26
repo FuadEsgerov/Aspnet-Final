@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Jotex.Models;
-using Jotex.Models.Blog;
-using Repository.Repositories.HomeRepositories;
+
+using Repository.Repositories.BlogRepositories;
 using Repository.Repositories.ContentRepositories;
 
 namespace Jotex.Controllers

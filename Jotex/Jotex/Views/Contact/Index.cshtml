@@ -1,25 +1,7 @@
-﻿
-@{
-    ViewData["Title"] = "Index";
-}
+﻿@model ContactUsViewModel
+@{ ViewData["Title"] = "Əlaqə"; }
 
-<section class="page-title">
-    <div class="page-title-container">
-        <div class="page-title-wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col col-xs-12">
-                        <h2>Contact us</h2>
-                        <ol class="breadcrumb">
-                            <li><a href="index.html">Home</a></li>
-                            <li>Contact us</li>
-                        </ol>
-                    </div>
-                </div> <!-- end row -->
-            </div> <!-- end container -->
-        </div>
-    </div>
-</section>
+@await Html.PartialAsync("../Shared/Page/_BreadCrumb")
 <!-- end page-title -->
 <!-- start contact-section -->
 <section class="contact-section section-padding">
@@ -69,25 +51,34 @@
                 <div class="col col-md-8">
                     <div class="contact-form">
                         <form method="post" class="contact-validation-active" id="contact-form-main">
-                            <div>
-                                <input type="text" class="form-control" name="name" id="name" placeholder="Name*">
+                            <div class="form-group">
+                                <input asp-for="@Model.Name" class="form-control" placeholder="Name*">
+                                <span asp-validation-for="@Model.Name" class="text-danger"></span>
                             </div>
                             <div>
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Email*">
+                                <input asp-for="@Model.Email" class="form-control" placeholder="Email*">
+                                <span asp-validation-for="@Model.Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="@Model.Phone" class="form-control" placeholder="Phone*">
+                                <span asp-validation-for="@Model.Phone" class="text-danger"></span>
+
                             </div>
                             <div>
-                                <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone*">
-                            </div>
-                            <div>
-                                <select name="subject" class="form-control">
+                                <select asp-for="@Model.Subject" class="form-control">
+
                                     <option disabled="disabled" selected>Contact subject</option>
                                     <option>Subject 1</option>
                                     <option>Subject 2</option>
                                     <option>Subject 3</option>
                                 </select>
+                                <span asp-validation-for="@Model.Subject" class="text-danger"></span>
+
                             </div>
                             <div class="fullwidth">
-                                <textarea class="form-control" name="note" id="note" placeholder="Case Description..."></textarea>
+                                <textarea asp-for="@Model.Description" class="form-control" placeholder="Case Description..."></textarea>
+                                <span asp-validation-for="@Model.Description" class="text-danger"></span>
+
                             </div>
                             <div class="submit-area">
                                 <button type="submit" class="theme-btn">Submit It Now</button>

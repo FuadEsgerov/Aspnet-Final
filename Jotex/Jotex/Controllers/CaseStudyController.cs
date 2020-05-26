@@ -6,7 +6,7 @@ using Jotex.Models;
 using Microsoft.AspNetCore.Mvc;
 using Repository.Repositories.CaseRepositories;
 using Repository.Repositories.ContentRepositories;
-using Repository.Repositories.HomeRepositories;
+using Repository.Repositories.BlogRepositories;
 
 namespace Jotex.Controllers
 {

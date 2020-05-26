@@ -23,6 +23,12 @@ namespace Repository.Models
         [MaxLength(100)]
         public string Video { get; set; }
         [Required]
+        [MaxLength(200)]
+        public string SubTitle { get; set; }
+        [Required]
+        [MaxLength(1000)]
+        public string SubText { get; set; }
+        [Required]
         [MaxLength(100)]
         public string ActionText { get; set; }
         [Required]
