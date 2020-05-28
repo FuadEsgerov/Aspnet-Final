@@ -20,6 +20,7 @@ namespace Repository.Models
         public IEnumerable<ServiceDetail> Details { get; set; }
         public IEnumerable<ServiceSpec> Specs { get; set; }
         public IEnumerable<OurAgent> Agents { get; set; }
+        public IEnumerable<OurBlog> Blogs { get; set; }
 
     }
 }

@@ -10,7 +10,9 @@ namespace Repository.Models
         [Required]
         [MaxLength(100)]
         public string Logo { get; set; }
-       
+        [Required]
+        [MaxLength(100)]
+        public string CoverImage { get; set; }
 
         [Required]
         [MaxLength(50)]
@@ -31,6 +33,6 @@ namespace Repository.Models
         [MaxLength(50)]
         public string WorkTime { get; set; }
 
-        public ICollection<SocialMediaAccount> Accounts { get; set; }
+        public IEnumerable<SocialMediaAccount> Accounts { get; set; }
     }
 }

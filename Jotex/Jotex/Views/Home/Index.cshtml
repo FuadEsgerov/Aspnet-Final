@@ -1,6 +1,8 @@
 ﻿@{ ViewData["Title"] = "Home Page"; }
 @model HomeViewModel
-        <!-- start of hero -->
+@{ var a = 0; }
+
+<!-- start of hero -->
 <section class="hero-slider hero-style-1">
     <div class="bottom-links">
         <div>
@@ -51,14 +53,13 @@
                             <div class="fun-fact-grids clearfix">
                                 @foreach (var item in Model.Counts)
                                 {
-                                    <div class="grid">
-                                        <div class="info">
-                                            <i class="@item.Icon"></i>
-                                            <h3><span class="odometer" data-count="@item.CountNumber">00</span></h3>
-                                            <p>@item.Name</p>
-                                        </div>
-                                    </div>
-                                }
+                    <div class="grid">
+                        <div class="info">
+                            <i class="@item.Icon"></i>
+                            <h3><span class="odometer" data-count="@item.CountNumber">00</span></h3>
+                            <p>@item.Name</p>
+                        </div>
+                    </div>}
                             </div>
                         </div>
                     </div>
@@ -89,20 +90,20 @@
                 </div>
             </div>
             <div class="col col-xs-12">
-              
+
                 <div class="service-slider">
                     @foreach (var item in Model.Services)
                     {
-                <div class="grid">
+        <div class="grid">
 
-                    <a href="@item.Id">
-                        <i class="@item.Logo"></i>
-                        <h3>@item.Name</h3>
-                    </a>
-                </div>}
+            <a href="/Service">
+                <i class="@item.Logo"></i>
+                <h3>@item.Name</h3>
+            </a>
+        </div>}
 
-                            </div>
-                        </div>
+                </div>
+            </div>
         </div>
     </div> <!-- end container -->
 </section>
@@ -169,7 +170,7 @@
                     @foreach (var item in Model.OurBestPlans)
                     {
         <div class="grid">
-            @if (item.Label.Id == 2)
+            @if (item.Label.Id == 1)
             {<div class="hilight-tag">@item.Label.Text</div>}
 
 
@@ -256,28 +257,51 @@
                     <div class="left-col">
                         <div class="section-title-s3">
                             <span>From our blog</span>
-                            <h2>Industry knowledge</h2>
-                            <p>With a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out</p>
                         </div>
-                        <div class="blog-post-w-media post">
-                            <div class="entry-media">
-                                <img src="~/images/blog/img-1.jpg" alt="">
-                            </div>
-                            <p class="cat"><i class="fi flaticon-tag-1"></i> @Model.OurBlogs.ElementAt(0).Tag</p>
-                            <h3><a href="#">@Model.OurBlogs.ElementAt(0).Title</a></h3>
-                            <p class="text"> @Model.OurBlogs.ElementAt(0).Text</p>
-                            <a href="@Model.Abouts.ElementAt(0).EndPoint" class="theme-btn">@Model.OurBlogs.ElementAt(0).ActionText</a>
-                        </div>
+                        @foreach (var item in Model.OurBlogs)
+                        {
+
+                    <h2>@item.Title</h2>
+                                    @if (item.Text.Length > 200)
+                                    {
+                    <p>@item.Text.Substring(0, 200).....</p>}
+
+                                                    <div class="blog-post-w-media post">
+                                                        <div class="entry-media">
+                                                            <img src="~/images/blog/img-1.jpg" alt="">
+                                                        </div>
+                                                        <p class="cat"><i class="fi flaticon-tag-1"></i> @item.Tag</p>
+                                                        <h3><a href="#">@item.SubTitle</a></h3>
+                                                        <p class="text"> @item.SubText</p>
+                                                        <a href="/Blog/Detailed/@item.Id" class="theme-btn">@item.ActionText</a>
+                                                    </div>break;
+                                                }
                     </div>
                     <div class="right-col">
-                        @foreach(var item in Model.OurBlogs) { 
+                        @foreach (var item in Model.OurBlogs)
+                        {
+                            a++;
+                            if (a == 1)
+                            {
+                                continue;
+                            }
+
+
                         <div class="post">
                             <p class="cat"><i class="fi flaticon-tag-1"></i> @item.Tag</p>
                             <h3><a href="#">@item.Title</a></h3>
-                            <p class="text"> @item.Text</p>
-                            <a href="@item.EndPoint" class="theme-btn">@item.ActionText</a>
-                        </div>}
-                        
+                            @if (item.Text.Length > 200)
+                            {
+                        <p class="text">@item.Text.Substring(0, 200).....</p>}
+                           
+                            <a href="/Blog/Detailed/@item.Id" class="theme-btn">@item.ActionText</a>
+                        </div>
+                            if (a == 4)
+                            {
+                                break;
+                            }
+                        }
+
                     </div>
                 </div>
             </div>
@@ -286,12 +310,8 @@
 </section>
 <!-- end blog-section -->
 <!-- start cta-s3-section -->
-
 @foreach (var item in Model.CoverdAds)
-{
-
-
-<section class="cta-s3-section section-padding">
+{<section class="cta-s3-section section-padding">
     <div class="container">
         <div class="row">
             <div class="col col-xs-12">
@@ -306,4 +326,5 @@
         </div>
     </div> <!-- end container -->
 </section>}
-<!-- end cta-s3-section -->
+
+  <!-- end cta-s3-section -->

@@ -16,6 +16,7 @@ namespace Repository.Repositories.ContentRepositories
         IEnumerable<OurBlog> GetOurBlogs(int take,int skip);
         IEnumerable<OurBlog> FindOurBlogs(int blogId);
         IEnumerable<Review> GetReviews(int blogId);
+     
 
 
     }

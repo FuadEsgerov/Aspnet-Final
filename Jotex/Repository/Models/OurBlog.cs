@@ -8,6 +8,9 @@ namespace Repository.Models
    public class OurBlog:BaseEntity
     {
         [Required]
+        public int ServiceId { get; set; }
+
+        [Required]
         [MaxLength(200)]
         public string Title { get; set; }
         [Required]
@@ -26,15 +29,21 @@ namespace Repository.Models
         [MaxLength(200)]
         public string SubTitle { get; set; }
         [Required]
+        [MaxLength(400)]
+        public string BlogSlogan { get; set; }
+
+        [Required]
         [MaxLength(1000)]
         public string SubText { get; set; }
-        [Required]
+       
         [MaxLength(100)]
         public string ActionText { get; set; }
-        [Required]
+   
         [MaxLength(100)]
         public string EndPoint { get; set; }
         public ICollection<Review> Reviews { get; set; }
+        public Service Service { get; set; }
+
 
     }
 }

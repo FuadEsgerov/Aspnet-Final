@@ -10,8 +10,8 @@ using Repository.Data;
 namespace Repository.Migrations
 {
     [DbContext(typeof(JotexDbContext))]
-    [Migration("20200520222831_updatelikeablemodel")]
-    partial class updatelikeablemodel
+    [Migration("20200528093126_initialcreate")]
+    partial class initialcreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -129,6 +129,117 @@ namespace Repository.Migrations
                     b.ToTable("Brands");
                 });
 
+            modelBuilder.Entity("Repository.Models.CaseStudy", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AddedBy")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime>("AddedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Challenge")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(1000)")
+                        .HasMaxLength(1000);
+
+                    b.Property<string>("Detail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(500)")
+                        .HasMaxLength(500);
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Result")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(1000)")
+                        .HasMaxLength(1000);
+
+                    b.Property<string>("Solution")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(1000)")
+                        .HasMaxLength(1000);
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SubDetail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(500)")
+                        .HasMaxLength(500);
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CaseStudies");
+                });
+
+            modelBuilder.Entity("Repository.Models.CaseStudySpec", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AddedBy")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime>("AddedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("CaseStudyId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Key")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("OrderBy")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CaseStudyId");
+
+                    b.ToTable("CaseStudySpecs");
+                });
+
             modelBuilder.Entity("Repository.Models.Company", b =>
                 {
                     b.Property<int>("Id")
@@ -220,6 +331,102 @@ namespace Repository.Migrations
                     b.ToTable("ContactUs");
                 });
 
+            modelBuilder.Entity("Repository.Models.Count", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AddedBy")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime>("AddedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CountNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Icon")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Counts");
+                });
+
+            modelBuilder.Entity("Repository.Models.CoverdAds", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ActionText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("AddedBy")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime>("AddedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CoverImage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("EndPoint")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(500)")
+                        .HasMaxLength(500);
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CovardAds");
+                });
+
             modelBuilder.Entity("Repository.Models.Faq", b =>
                 {
                     b.Property<int>("Id")
@@ -259,12 +466,56 @@ namespace Repository.Migrations
                     b.ToTable("Faqs");
                 });
 
+            modelBuilder.Entity("Repository.Models.Label", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AddedBy")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime>("AddedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Color")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Labels");
+                });
+
             modelBuilder.Entity("Repository.Models.LikeableArea", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ActionText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<string>("AddedBy")
                         .HasColumnType("nvarchar(50)")
@@ -364,9 +615,11 @@ namespace Repository.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
+
+                    b.Property<int>("ServiceId")
+                        .HasColumnType("int");
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
@@ -378,6 +631,8 @@ namespace Repository.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ServiceId");
+
                     b.ToTable("Agents");
                 });
 
@@ -387,6 +642,11 @@ namespace Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ActionText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<string>("AddedBy")
                         .HasColumnType("nvarchar(50)")
@@ -420,9 +680,8 @@ namespace Repository.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
-                    b.Property<string>("HilightTag")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                    b.Property<int?>("LabelId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Logo")
                         .IsRequired()
@@ -446,6 +705,8 @@ namespace Repository.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("LabelId");
+
                     b.ToTable("OurBestPlans");
                 });
 
@@ -455,6 +716,11 @@ namespace Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ActionText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<string>("AddedBy")
                         .HasColumnType("nvarchar(50)")
@@ -479,8 +745,26 @@ namespace Repository.Migrations
                     b.Property<DateTime>("ModifiedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("ServiceId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Slogan")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(400)")
+                        .HasMaxLength(400);
+
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
+
+                    b.Property<string>("SubText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(1000)")
+                        .HasMaxLength(1000);
+
+                    b.Property<string>("SubTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(200)")
+                        .HasMaxLength(200);
 
                     b.Property<string>("Tag")
                         .IsRequired()
@@ -489,13 +773,13 @@ namespace Repository.Migrations
 
                     b.Property<string>("Text")
                         .IsRequired()
-                        .HasColumnType("nvarchar(200)")
-                        .HasMaxLength(200);
+                        .HasColumnType("nvarchar(1000)")
+                        .HasMaxLength(1000);
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(200)")
+                        .HasMaxLength(200);
 
                     b.Property<string>("Video")
                         .HasColumnType("nvarchar(100)")
@@ -503,7 +787,58 @@ namespace Repository.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ServiceId");
+
                     b.ToTable("OurBlogs");
+                });
+
+            modelBuilder.Entity("Repository.Models.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AddedBy")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime>("AddedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("OurBlogId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(500)")
+                        .HasMaxLength(500);
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OurBlogId");
+
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("Repository.Models.Service", b =>
@@ -566,18 +901,13 @@ namespace Repository.Migrations
 
                     b.Property<string>("Detail")
                         .IsRequired()
-                        .HasColumnType("nvarchar(200)")
-                        .HasMaxLength(200);
+                        .HasColumnType("nvarchar(700)")
+                        .HasMaxLength(700);
 
                     b.Property<string>("Document")
                         .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
-
-                    b.Property<string>("GracePeriod")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
 
                     b.Property<string>("Image")
                         .IsRequired()
@@ -589,10 +919,49 @@ namespace Repository.Migrations
                         .HasColumnType("nvarchar(200)")
                         .HasMaxLength(200);
 
-                    b.Property<string>("Location")
-                        .IsRequired()
+                    b.Property<string>("ModifiedBy")
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ServiceId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SubDetail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(200)")
+                        .HasMaxLength(200);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ServiceId");
+
+                    b.ToTable("ServiceDetails");
+                });
+
+            modelBuilder.Entity("Repository.Models.ServiceSpec", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AddedBy")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime>("AddedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Key")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<string>("ModifiedBy")
                         .HasColumnType("nvarchar(50)")
@@ -601,20 +970,8 @@ namespace Repository.Migrations
                     b.Property<DateTime>("ModifiedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("NumberOfPeople")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<string>("Payment")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<string>("PolicyModification")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                    b.Property<int>("OrderBy")
+                        .HasColumnType("int");
 
                     b.Property<int>("ServiceId")
                         .HasColumnType("int");
@@ -622,16 +979,16 @@ namespace Repository.Migrations
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Support")
+                    b.Property<string>("Value")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.HasKey("Id");
 
                     b.HasIndex("ServiceId");
 
-                    b.ToTable("ServiceDetails");
+                    b.ToTable("ServiceSpecs");
                 });
 
             modelBuilder.Entity("Repository.Models.Setting", b =>
@@ -652,6 +1009,11 @@ namespace Repository.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
+
+                    b.Property<string>("CoverImage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -820,11 +1182,6 @@ namespace Repository.Migrations
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
@@ -840,6 +1197,49 @@ namespace Repository.Migrations
                     b.ToTable("Testimonials");
                 });
 
+            modelBuilder.Entity("Repository.Models.CaseStudySpec", b =>
+                {
+                    b.HasOne("Repository.Models.CaseStudy", "CaseStudy")
+                        .WithMany("Specs")
+                        .HasForeignKey("CaseStudyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Repository.Models.OurAgent", b =>
+                {
+                    b.HasOne("Repository.Models.Service", "Service")
+                        .WithMany("Agents")
+                        .HasForeignKey("ServiceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Repository.Models.OurBestPlan", b =>
+                {
+                    b.HasOne("Repository.Models.Label", "Label")
+                        .WithMany("Plans")
+                        .HasForeignKey("LabelId");
+                });
+
+            modelBuilder.Entity("Repository.Models.OurBlog", b =>
+                {
+                    b.HasOne("Repository.Models.Service", "Service")
+                        .WithMany("Blogs")
+                        .HasForeignKey("ServiceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Repository.Models.Review", b =>
+                {
+                    b.HasOne("Repository.Models.OurBlog", "OurBlog")
+                        .WithMany("Reviews")
+                        .HasForeignKey("OurBlogId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Repository.Models.Service", b =>
                 {
                     b.HasOne("Repository.Models.Company", "Company")
@@ -853,6 +1253,15 @@ namespace Repository.Migrations
                 {
                     b.HasOne("Repository.Models.Service", "Service")
                         .WithMany("Details")
+                        .HasForeignKey("ServiceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Repository.Models.ServiceSpec", b =>
+                {
+                    b.HasOne("Repository.Models.Service", "Service")
+                        .WithMany("Specs")
                         .HasForeignKey("ServiceId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

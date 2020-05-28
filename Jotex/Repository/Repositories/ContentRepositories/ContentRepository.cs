@@ -60,5 +60,7 @@ namespace Repository.Repositories.ContentRepositories
         {
             return _context.Reviews.Where(r => r.OurBlogId == blogId).ToList();
         }
+
+    
     }
 }

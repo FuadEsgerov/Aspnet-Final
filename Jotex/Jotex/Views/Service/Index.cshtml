@@ -1,12 +1,14 @@
 ﻿@model ServiceViewModel
 
-@{ var a = 0; }
+@{ var a = 0;}
+@{ var b = 0;}
+@{ var toogle = "in active";}
 
 @{
     ViewData["Title"] = "Xidmətlər";
 }
 <!-- start page-title -->
-@await Html.PartialAsync("../Shared/Page/_BreadCrumb" )
+@await Html.PartialAsync("../Shared/Page/_BreadCrumb")
 
 <!-- end page-title -->
 <!-- start service-single-section -->
@@ -19,28 +21,28 @@
 
                         @foreach (var item in Model.Services)
                         {
-                            <li class="active">
-                                <a href="#@item.Id" data-toggle="tab">
-                                    <i class="@item.Logo"></i>
-                                    <h3>@item.Name</h3>
-                                </a>
-                            </li>
-                            break;
-                        }
-                        @foreach (var item in Model.Services)
-                        {
+
+                            var id = "0";
                             a++;
+                            id += a;
                             if (a == 1)
                             {
-                                continue;
+                                <li class="active">
+                                    <a href="#@id" data-toggle="tab">
+                                        <i class="@item.Logo"></i>
+                                        <h3>@item.Name</h3>
+                                    </a>
+                                </li>
                             }
-                            <li>
-                                <a href="#@item.Id" data-toggle="tab">
-                                    <i class="@item.Logo"></i>
-                                    <h3>@item.Name</h3>
-                                </a>
-                            </li>
-
+                            else
+                            {
+                                <li>
+                                    <a href="#@id" data-toggle="tab">
+                                        <i class="@item.Logo"></i>
+                                        <h3>@item.Name</h3>
+                                    </a>
+                                </li>
+                            }
 
                         }
 
@@ -51,10 +53,17 @@
                         @foreach (var item in Model.Services)
 
                         {
+                            var id = "0";
+                            b++;
+                            id += b;
+                            if (b > 1)
+                            {
+                                toogle = "";
+                            }
                             @foreach (var detail in item.Details)
                             {
 
-                                <div class="tab-pane fade in active" id="@item.Id">
+                                <div class="tab-pane fade @toogle" id="@id">
                                     <div class="content-area clearfix">
                                         <div class="grid info-grid">
                                             <h3>@item.Name</h3>
@@ -75,7 +84,7 @@
                                             </table>
                                         </div>
                                         <div class="grid">
-                                            <img src="images/@detail.Image" alt="Image">
+                                            <img src="/images/@detail.Image" alt="Image">
                                         </div>
                                     </div>
                                     <div class="bottom-info">

@@ -716,7 +716,6 @@ namespace Repository.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ActionText")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
@@ -727,8 +726,12 @@ namespace Repository.Migrations
                     b.Property<DateTime>("AddedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("EndPoint")
+                    b.Property<string>("BlogSlogan")
                         .IsRequired()
+                        .HasColumnType("nvarchar(400)")
+                        .HasMaxLength(400);
+
+                    b.Property<string>("EndPoint")
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
@@ -742,6 +745,9 @@ namespace Repository.Migrations
 
                     b.Property<DateTime>("ModifiedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("ServiceId")
+                        .HasColumnType("int");
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
@@ -776,6 +782,8 @@ namespace Repository.Migrations
                         .HasMaxLength(100);
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ServiceId");
 
                     b.ToTable("OurBlogs");
                 });
@@ -998,6 +1006,11 @@ namespace Repository.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
+                    b.Property<string>("CoverImage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
@@ -1203,6 +1216,15 @@ namespace Repository.Migrations
                     b.HasOne("Repository.Models.Label", "Label")
                         .WithMany("Plans")
                         .HasForeignKey("LabelId");
+                });
+
+            modelBuilder.Entity("Repository.Models.OurBlog", b =>
+                {
+                    b.HasOne("Repository.Models.Service", "Service")
+                        .WithMany("Blogs")
+                        .HasForeignKey("ServiceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Repository.Models.Review", b =>

@@ -14,6 +14,6 @@ namespace Repository.Models
         [MaxLength(50)]
         public string Color { get; set; }
 
-        public ICollection<OurBestPlan> Plans { get; set; }
+        public IEnumerable<OurBestPlan> Plans { get; set; }
     }
 }

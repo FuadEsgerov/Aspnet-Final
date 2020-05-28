@@ -1,4 +1,5 @@
 ﻿@model FaqViewModel
+@{var f = 0;}
 
 @{ ViewData["Title"] = "Faq"; }
 
@@ -12,7 +13,7 @@
             <div class="col col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
                 <div class="section-title-s2">
                     <span>FAQ</span>
-                    <h2>  Frequently Asked Question</h2>
+                    <h2>  Tez-Tez Verilən Suallar</h2>
                 </div>
             </div>
         </div>
@@ -22,11 +23,12 @@
                 <div class="panel-group faq-accordion theme-accordion-s1" id="accordion">
                     @foreach (var item in Model.Faqs)
                     {
+                        f++;
         <div class="panel panel-default">
             <div class="panel-heading">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="true">@item.Question</a>
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-@f" aria-expanded="true">@item.Question</a>
             </div>
-            <div id="collapse-1" class="panel-collapse collapse in">
+            <div id="collapse-@f" class="panel-collapse collapse in">
                 <div class="panel-body">
                     <p>@item.Answer </p>
                 </div>

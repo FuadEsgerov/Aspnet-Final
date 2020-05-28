@@ -29,10 +29,11 @@ namespace Jotex.Controllers
         {
             var blogs = _contentRepository.GetOurBlogs(blogSearch.Limit,
                                                                      (blogSearch.Page - 1) * blogSearch.Limit);
-
+           
             var model = new BlogViewModel
             {
                 OurBlogs = _mapper.Map<IEnumerable<OurBlog>, IEnumerable<OurBlogViewModel>>(blogs),
+                Services = _contentRepository.GetServices(),
                
 
                 Page = blogSearch.Page,
@@ -48,15 +49,18 @@ namespace Jotex.Controllers
             var blogfind = _contentRepository.FindOurBlogs(id);
             var addreview = _contentRepository.GetReviews(id);
 
+
             var model = new BlogViewModel
             {
                 OurBlogs = _mapper.Map<IEnumerable<OurBlog>, IEnumerable<OurBlogViewModel>>(blogfind),
                 Reviews = _mapper.Map<IEnumerable<Review>, IEnumerable<ReviewViewModel>>(addreview),
-                Services = _contentRepository.GetServices(),
+                Services=_contentRepository.GetServices(),
                 Setting = _contentRepository.GetSettings(),
             };
             
             return View(model);
         }
-    }
+       
+  
+        }
 }
