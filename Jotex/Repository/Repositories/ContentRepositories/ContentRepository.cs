@@ -61,6 +61,153 @@ namespace Repository.Repositories.ContentRepositories
             return _context.Reviews.Where(r => r.OurBlogId == blogId).ToList();
         }
 
-    
+        public IEnumerable<Testimonial> GetAllTestimonials()
+        {
+            return _context.Testimonials.ToList();
+        }
+
+        public Testimonial CreateTestimonial(Testimonial model)
+        {
+            model.AddedDate = DateTime.Now;
+            _context.Testimonials.Add(model);
+            _context.SaveChanges();
+            return model;
+        }
+
+        public Testimonial GetTestimonialById(int id)
+        {
+            return _context.Testimonials.Find(id);
+        }
+
+        public void UpdateTestimonial(Testimonial testimonialToUpdate, Testimonial model)
+        {
+            testimonialToUpdate.Status = model.Status;
+            testimonialToUpdate.Review = model.Review;
+            testimonialToUpdate.UserName = model.UserName;
+            testimonialToUpdate.UserProfession = model.UserProfession;
+            testimonialToUpdate.ModifiedBy = model.ModifiedBy;
+            testimonialToUpdate.ModifiedDate = DateTime.Now;
+            _context.SaveChanges();
+        }
+
+        public void DeleteTestimonial(Testimonial testimonial)
+        {
+            _context.Testimonials.Remove(testimonial);
+            _context.SaveChanges();
+        }
+
+        public IEnumerable<OurBlog> GetAllBlogs()
+        {
+            return _context.OurBlogs.ToList();
+        }
+
+        public OurBlog CreateBlog(OurBlog model)
+        {
+            model.AddedDate = DateTime.Now;
+            _context.OurBlogs.Add(model);
+            _context.SaveChanges();
+            return model;
+        }
+
+        public OurBlog GetBlogById(int id)
+        {
+            return _context.OurBlogs.Find(id);
+        }
+
+        public void UpdateBlog(OurBlog blogToUpdate, OurBlog model)
+        {
+            blogToUpdate.Status = model.Status;
+            blogToUpdate.Title = model.Title;
+            blogToUpdate.Text = model.Text;
+            blogToUpdate.Tag = model.Tag;
+            blogToUpdate.Image = model.Image;
+            blogToUpdate.Video = model.Video;
+            blogToUpdate.SubTitle = model.SubTitle;
+            blogToUpdate.BlogSlogan = model.BlogSlogan;
+            blogToUpdate.SubText = model.SubText;
+            blogToUpdate.ActionText = model.ActionText;
+            blogToUpdate.EndPoint = model.EndPoint;
+            blogToUpdate.ModifiedBy = model.ModifiedBy;
+            blogToUpdate.ModifiedDate = DateTime.Now;
+            _context.SaveChanges();
+        }
+
+        public void DeleteBlog(OurBlog blog)
+        {
+            _context.OurBlogs.Remove(blog);
+            _context.SaveChanges();
+        }
+        //Service Admin
+        public IEnumerable<Service> GetAllServices()
+        {
+            return _context.Services.ToList();
+        }
+
+        public Service CreateService(Service model)
+        {
+            model.AddedDate = DateTime.Now;
+            _context.Services.Add(model);
+            _context.SaveChanges();
+            return model;
+        }
+
+        public Service GetServiceById(int id)
+        {
+            return _context.Services.Find(id);
+        }
+
+        public void UpdateService(Service serviceToUpdate, Service model)
+        {
+            serviceToUpdate.Status = model.Status;
+            serviceToUpdate.Name = model.Name;
+            serviceToUpdate.Logo = model.Logo;
+            serviceToUpdate.ModifiedBy = model.ModifiedBy;
+            serviceToUpdate.ModifiedDate = DateTime.Now;
+            _context.SaveChanges();
+        }
+
+        public void DeleteService(Service service)
+        {
+            _context.Services.Remove(service);
+            _context.SaveChanges();
+        }
+
+        public IEnumerable<ServiceDetail> GetAllServiceDetail()
+        {
+            return _context.ServiceDetails.Include(s=>s.Service).ToList();
+        }
+
+        public ServiceDetail CreateServiceDetail(ServiceDetail model)
+        {
+            model.AddedDate = DateTime.Now;
+            _context.ServiceDetails.Add(model);
+            _context.SaveChanges();
+            return model;
+        }
+
+        public ServiceDetail GetServiceDetailById(int id)
+        {
+            return _context.ServiceDetails.Include(s => s.Service).FirstOrDefault(s => s.Id == id);
+        }
+
+        public void UpdateServiceDetail(ServiceDetail serviceDetailToUpdate, ServiceDetail model )
+        {
+            serviceDetailToUpdate.Status = model.Status;
+            serviceDetailToUpdate.ServiceId = model.Id;      
+            serviceDetailToUpdate.Information = model.Information;
+            serviceDetailToUpdate.Image = model.Image;
+            serviceDetailToUpdate.SubDetail = model.SubDetail;
+            serviceDetailToUpdate.Document = model.Document;
+            serviceDetailToUpdate.Detail = model.Detail;
+            serviceDetailToUpdate.ModifiedBy = model.ModifiedBy;
+            serviceDetailToUpdate.ModifiedDate = DateTime.Now;
+            _context.SaveChanges();
+        }
+
+        public void DeleteServiceDetail(ServiceDetail serviceDetail)
+        {
+            _context.ServiceDetails.Remove(serviceDetail);
+            _context.SaveChanges();
+        }
     }
 }

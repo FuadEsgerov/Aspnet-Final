@@ -15,7 +15,6 @@ namespace Repository.Models
         [MaxLength(200)]
         public string Slogan  { get; set; }
 
-        [Required]
         [MaxLength(100)]
         public string Image { get; set; }
         [Required]

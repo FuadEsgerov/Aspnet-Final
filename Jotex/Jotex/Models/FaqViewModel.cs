@@ -8,6 +8,8 @@ namespace Jotex.Models
 {
     public class FaqViewModel
     {
-        public IEnumerable<Faq> Faqs { get; set; }
+        public int İd { get; set; }
+        public string Question { get; set; }
+        public string Answer { get; set; }
     }
 }

@@ -11,7 +11,8 @@ public class JotexDbContext:DbContext
         public JotexDbContext(DbContextOptions<JotexDbContext>options):base(options) { }
 
         public DbSet<About> Abouts { get; set; }
-   
+        public DbSet<Admin> Admins { get; set; }
+
         public DbSet<OurAgent> Agents { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<OurBestPlan> OurBestPlans { get; set; }

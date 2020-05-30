@@ -7,6 +7,7 @@ namespace Repository.Models
 {
    public class CaseStudy : BaseEntity
     {
+
         [Required]
         [MaxLength(100)]
         public string Title { get; set; }

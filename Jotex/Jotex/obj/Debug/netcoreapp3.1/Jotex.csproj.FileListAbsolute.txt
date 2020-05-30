@@ -299,7 +299,6 @@ C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\bin\Debug\netcoreapp3.1\Au
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Slider\Default.cshtml.g.cs
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Razor\Views\About\Index.cshtml.g.cs
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Testimonial\Default.cshtml.g.cs
-C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Razor\Views\Faq\Index.cshtml.g.cs
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Brand\Default.cshtml.g.cs
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Page\_BreadCrumb.cshtml.g.cs
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Jotex.csproj.CoreCompileInputs.cache
@@ -307,3 +306,5 @@ C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Jo
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Jotex.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\bin\Debug\netcoreapp3.1\PagedList.Core.dll
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\bin\Debug\netcoreapp3.1\PagedList.Core.Mvc.dll
+C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\bin\Debug\netcoreapp3.1\CryptoHelper.dll
+C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Razor\Views\FaqPage\Index.cshtml.g.cs

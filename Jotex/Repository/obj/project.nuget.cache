@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "RFnebVS1x3nU7mik8xt6FyT0xmq6yahCmV2oU0lQuBacFMWnKNeWPCods4vVtgs2+KUgr1rSBP1A4XdbXoNoCg==",
+  "dgSpecHash": "iAqde6m3/fxn/4AW9bf5w+XMeqcLAPUxJ+pWejp4jHJKZDgD/hLIn4w2sKlO8BiW85ebawUoFroBtccfVxG44A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Darklight\\Documents\\Aspnet-Final\\Jotex\\Repository\\Repository.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Darklight\\.nuget\\packages\\cryptohelper\\3.0.2\\cryptohelper.3.0.2.nupkg.sha512",
+    "C:\\Users\\Darklight\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\2.0.1\\microsoft.aspnetcore.cryptography.internal.2.0.1.nupkg.sha512",
+    "C:\\Users\\Darklight\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\2.0.1\\microsoft.aspnetcore.cryptography.keyderivation.2.0.1.nupkg.sha512",
     "C:\\Users\\Darklight\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Darklight\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\Darklight\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

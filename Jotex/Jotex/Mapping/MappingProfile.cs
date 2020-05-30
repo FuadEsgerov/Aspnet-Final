@@ -27,6 +27,7 @@ namespace Jotex.Mapping
             CreateMap<OurBlog, OurBlogViewModel>();
             CreateMap<Review, OurBlogViewModel>();
             CreateMap<Review, ReviewViewModel>();
+            CreateMap<Faq, FaqViewModel>();
 
 
         }

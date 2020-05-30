@@ -7,8 +7,7 @@ namespace Repository.Models
 {
    public class OurBlog:BaseEntity
     {
-        [Required]
-        public int ServiceId { get; set; }
+   
 
         [Required]
         [MaxLength(200)]
@@ -42,7 +41,7 @@ namespace Repository.Models
         [MaxLength(100)]
         public string EndPoint { get; set; }
         public ICollection<Review> Reviews { get; set; }
-        public Service Service { get; set; }
+ 
 
 
     }

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Jotex.Models;
+﻿using Jotex.Models;
 using Microsoft.AspNetCore.Mvc;
-using Repository.Repositories.BlogRepositories;
+using Repository.Repositories.AboutRepositories;
 
 namespace Jotex.Controllers
 {

@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "nWOKWrOW7e8hvFrs0ApdZvPH+o/d0xkbcNtpFU2XzI6V7QmL+x3B2GU+jtrlzmgw43iP0CmkmQdsYoX7AEEKWw==",
+  "dgSpecHash": "rQEKfcMwOqKDZ0aXjEuyqqA2wuupYlCcb5TwduYwliHRLirpv0+Hjk2yVuWoJqc0xsNItywSdWeCEac5MW2k2g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Darklight\\Documents\\Aspnet-Final\\Jotex\\Jotex\\Jotex.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Darklight\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\Darklight\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\Darklight\\.nuget\\packages\\cryptohelper\\3.0.2\\cryptohelper.3.0.2.nupkg.sha512",
+    "C:\\Users\\Darklight\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\2.0.1\\microsoft.aspnetcore.cryptography.internal.2.0.1.nupkg.sha512",
+    "C:\\Users\\Darklight\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\2.0.1\\microsoft.aspnetcore.cryptography.keyderivation.2.0.1.nupkg.sha512",
     "C:\\Users\\Darklight\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Darklight\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\Darklight\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.0\\microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",

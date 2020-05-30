@@ -20,7 +20,7 @@ namespace Jotex.Models
     {
         public BlogSeachViewModel()
         { Page = 1;
-            Limit = 7;
+            Limit = 8;
             Count = 20;
         }
         public int Id { get; set; }

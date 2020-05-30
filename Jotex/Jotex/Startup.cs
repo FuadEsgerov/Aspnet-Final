@@ -1,22 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Repository.Data;
-using Repository.Repositories.BlogRepositories;
+using Repository.Repositories.AboutRepositories;
 using Repository.Repositories.CaseRepositories;
 using Repository.Repositories.ContactRepositories;
 using Repository.Repositories.ContentRepositories;
 using Repository.Repositories.FaqRepository;
-using Repository.Repositories.BlogRepositories;
+using Repository.Repositories.HomeRepositories;
 
 namespace Jotex
 {
@@ -33,6 +28,7 @@ namespace Jotex
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+           
             services.AddAutoMapper(typeof(Startup));
             services.AddTransient<IContentRepository, ContentRepository>();
             services.AddTransient<IHomeRepository, HomeRepository>();
@@ -43,6 +39,8 @@ namespace Jotex
             services.AddDbContext<JotexDbContext>(options =>
       options.UseSqlServer(Configuration.GetConnectionString("Default"),
       x => x.MigrationsAssembly("Repository")));
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

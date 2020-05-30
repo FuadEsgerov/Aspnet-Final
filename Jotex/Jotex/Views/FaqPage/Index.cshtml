@@ -1,0 +1,44 @@
+﻿@model IEnumerable<FaqViewModel>
+@{var f = 0;}
+
+@{ ViewData["Title"] = "Faq"; }
+
+<!-- start page-title -->
+@await Html.PartialAsync("../Shared/Page/_BreadCrumb")
+<!-- end page-title -->
+<!-- start faq-pg-section -->
+<section class="faq-pg-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                <div class="section-title-s2">
+                    <span>FAQ</span>
+                    <h2>  Tez-Tez Verilən Suallar</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="panel-group faq-accordion theme-accordion-s1" id="accordion">
+                    @foreach (var item in Model)
+                    {
+                        f++;
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-@f" aria-expanded="true">@item.Question</a>
+            </div>
+            <div id="collapse-@f" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <p>@item.Answer </p>
+                </div>
+            </div>
+        </div>}
+
+
+                </div>
+            </div>
+        </div>
+    </div> <!-- end container -->
+</section>
+<!-- end faq-pg-section -->
