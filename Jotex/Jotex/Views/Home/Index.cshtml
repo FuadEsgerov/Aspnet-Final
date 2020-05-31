@@ -1,4 +1,5 @@
 ﻿@{ ViewData["Title"] = "Home Page"; }
+@inject Repository.Services.ICloudinaryService _cloudinaryServise
 @model HomeViewModel
 @{ var a = 0; }
 
@@ -53,13 +54,13 @@
                             <div class="fun-fact-grids clearfix">
                                 @foreach (var item in Model.Counts)
                                 {
-                    <div class="grid">
-                        <div class="info">
-                            <i class="@item.Icon"></i>
-                            <h3><span class="odometer" data-count="@item.CountNumber">00</span></h3>
-                            <p>@item.Name</p>
-                        </div>
-                    </div>}
+                                    <div class="grid">
+                                        <div class="info">
+                                            <i class="@item.Icon"></i>
+                                            <h3><span class="odometer" data-count="@item.CountNumber">00</span></h3>
+                                            <p>@item.Name</p>
+                                        </div>
+                                    </div>}
                             </div>
                         </div>
                     </div>
@@ -70,7 +71,7 @@
                             <a href="@Model.Abouts.ElementAt(0).EndPoint" class="theme-btn">@Model.Abouts.ElementAt(0).ActionText</a>
                         </div>
                         <div class="img-holder">
-                            <img src="~/images/@Model.Abouts.ElementAt(0).Image" alt>
+                            <img src="@_cloudinaryServise.BuildUrl(Model.Abouts.ElementAt(0).Image)" alt="@_cloudinaryServise.BuildUrl(Model.Abouts.ElementAt(0).Image)">
                         </div>
                     </div>
                 </div>
@@ -94,13 +95,13 @@
                 <div class="service-slider">
                     @foreach (var item in Model.Services)
                     {
-        <div class="grid">
+                        <div class="grid">
 
-            <a href="/Service">
-                <i class="@item.Logo"></i>
-                <h3>@item.Name</h3>
-            </a>
-        </div>}
+                            <a href="/Service">
+                                <i class="@item.Logo"></i>
+                                <h3>@item.Name</h3>
+                            </a>
+                        </div>}
 
                 </div>
             </div>
@@ -113,41 +114,41 @@
     <div class="container">
         @foreach (var item in Model.LikeableAreas)
         {
-<div class="row">
-    <div class="col col-xs-12">
-        <div class="inner clearfix">
-            <div class="left-col">
-                <div class="section-title">
-                    <span>Likeable area</span>
-                    <h2>@item.Title</h2>
+            <div class="row">
+                <div class="col col-xs-12">
+                    <div class="inner clearfix">
+                        <div class="left-col">
+                            <div class="section-title">
+                                <span>Likeable area</span>
+                                <h2>@item.Title</h2>
+                            </div>
+                            <div class="details">
+                                <p>@item.Information</p>
+                            </div>
+                        </div>
+                        <div class="right-col">
+                            <div class="contact-info">
+                                <p>@item.CallUs</p>
+                                <h2>@item.Phone</h2>
+                                <a href="@item.EndPoint" class="theme-btn-s3">@item.ActionText</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="details">
-                    <p>@item.Information</p>
+                <div class="col col-xs-12">
+                    <div class="video-area">
+                        <div class="img-holder">
+                            <img src="~/images/@item.Phote" alt>
+                            <div class="video-btns">
+                                <a href="@item.Video" class="video-btn" data-type="iframe" tabindex="0"><i class="fi flaticon-play"></i></a>
+                            </div>
+                        </div>
+                        <div class="experience-text">
+                            <p><span>@item.Year</span> @item.Experience</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="right-col">
-                <div class="contact-info">
-                    <p>@item.CallUs</p>
-                    <h2>@item.Phone</h2>
-                    <a href="@item.EndPoint" class="theme-btn-s3">@item.ActionText</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col col-xs-12">
-        <div class="video-area">
-            <div class="img-holder">
-                <img src="~/images/@item.Phote" alt>
-                <div class="video-btns">
-                    <a href="@item.Video" class="video-btn" data-type="iframe" tabindex="0"><i class="fi flaticon-play"></i></a>
-                </div>
-            </div>
-            <div class="experience-text">
-                <p><span>@item.Year</span> @item.Experience</p>
-            </div>
-        </div>
-    </div>
-</div>}
+            </div>}
     </div> <!-- end container -->
 </section>
 
@@ -169,25 +170,25 @@
                 <div class="policy-grids">
                     @foreach (var item in Model.OurBestPlans)
                     {
-        <div class="grid">
-            @if (item.Label.Id == 1)
-            {<div class="hilight-tag">@item.Label.Text</div>}
+                        <div class="grid">
+                            @if (item.Label.Id == 1)
+                            {<div class="hilight-tag">@item.Label.Text</div>}
 
 
-            <div class="policy-header">
-                <h5>@item.Title</h5>
-                <i class="fi flaticon-umbrella"></i>
-            </div>
-            <div class="policy-body">
-                <ul>
-                    <li>@item.Detail1</li>
-                    <li>@item.Detail2 </li>
-                    <li>@item.Detail3</li>
-                    <li>@item.Detail4</li>
-                </ul>
-                <a href="@item.EndPoint" class="theme-btn-s3">@item.ActionText</a>
-            </div>
-        </div>}
+                            <div class="policy-header">
+                                <h5>@item.Title</h5>
+                                <i class="fi flaticon-umbrella"></i>
+                            </div>
+                            <div class="policy-body">
+                                <ul>
+                                    <li>@item.Detail1</li>
+                                    <li>@item.Detail2 </li>
+                                    <li>@item.Detail3</li>
+                                    <li>@item.Detail4</li>
+                                </ul>
+                                <a href="@item.EndPoint" class="theme-btn-s3">@item.ActionText</a>
+                            </div>
+                        </div>}
 
                 </div>
             </div>
@@ -261,21 +262,21 @@
                         @foreach (var item in Model.OurBlogs)
                         {
 
-                    <h2>@item.Title</h2>
-                                    @if (item.Text.Length > 200)
-                                    {
-                    <p>@item.Text.Substring(0, 200).....</p>}
+                            <h2>@item.Title</h2>
+                            @if (item.Text.Length > 200)
+                            {
+                                <p>@item.Text.Substring(0, 200).....</p>}
 
-                                                    <div class="blog-post-w-media post">
-                                                        <div class="entry-media">
-                                                            <img src="~/images/blog/img-1.jpg" alt="">
-                                                        </div>
-                                                        <p class="cat"><i class="fi flaticon-tag-1"></i> @item.Tag</p>
-                                                        <h3><a href="#">@item.SubTitle</a></h3>
-                                                        <p class="text"> @item.SubText</p>
-                                                        <a href="/Blog/Detailed/@item.Id" class="theme-btn">@item.ActionText</a>
-                                                    </div>break;
-                                                }
+                            <div class="blog-post-w-media post">
+                                <div class="entry-media">
+                                    <img src="~/images/blog/img-1.jpg" alt="">
+                                </div>
+                                <p class="cat"><i class="fi flaticon-tag-1"></i> @item.Tag</p>
+                                <h3><a href="#">@item.SubTitle</a></h3>
+                                <p class="text"> @item.SubText</p>
+                                <a href="/Blog/Detailed/@item.Id" class="theme-btn">@item.ActionText</a>
+                            </div>break;
+                        }
                     </div>
                     <div class="right-col">
                         @foreach (var item in Model.OurBlogs)
@@ -287,15 +288,15 @@
                             }
 
 
-                        <div class="post">
-                            <p class="cat"><i class="fi flaticon-tag-1"></i> @item.Tag</p>
-                            <h3><a href="#">@item.Title</a></h3>
-                            @if (item.Text.Length > 200)
-                            {
-                        <p class="text">@item.Text.Substring(0, 200).....</p>}
-                           
-                            <a href="/Blog/Detailed/@item.Id" class="theme-btn">@item.ActionText</a>
-                        </div>
+                            <div class="post">
+                                <p class="cat"><i class="fi flaticon-tag-1"></i> @item.Tag</p>
+                                <h3><a href="#">@item.Title</a></h3>
+                                @if (item.Text.Length > 200)
+                                {
+                                    <p class="text">@item.Text.Substring(0, 200).....</p>}
+
+                                <a href="/Blog/Detailed/@item.Id" class="theme-btn">@item.ActionText</a>
+                            </div>
                             if (a == 4)
                             {
                                 break;
@@ -312,19 +313,19 @@
 <!-- start cta-s3-section -->
 @foreach (var item in Model.CoverdAds)
 {<section class="cta-s3-section section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col col-xs-12">
-                <div class="inner clearfix">
-                    <div class="cta-content">
-                        <h2>@item.Title</h2>
-                        <p>@item.Text </p>
-                        <a href="@item.EndPoint" class="theme-btn-s4">@item.ActionText</a>
+        <div class="container">
+            <div class="row">
+                <div class="col col-xs-12">
+                    <div class="inner clearfix">
+                        <div class="cta-content">
+                            <h2>@item.Title</h2>
+                            <p>@item.Text </p>
+                            <a href="@item.EndPoint" class="theme-btn-s4">@item.ActionText</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div> <!-- end container -->
-</section>}
+        </div> <!-- end container -->
+    </section>}
 
-  <!-- end cta-s3-section -->
+<!-- end cta-s3-section -->

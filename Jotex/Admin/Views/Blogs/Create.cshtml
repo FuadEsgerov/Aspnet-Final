@@ -1,186 +1,157 @@
 ﻿@model Admin.Models.Pages.BlogViewModel
-
-
 <!-- Begin Page Content -->
-    <div class="container-fluid">
+<div class="container-fluid">
 
-        <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Yeni Blog</h1>
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Yeni Blog</h1>
 
-        <section class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="the-box no-border">
-                            <form method="post">
-                                <div class="form-group">
-                                    <label>Vəziyyəti</label>
-                                    <div class="custom-control custom-radio custom-control-inline ml-3">
-                                        <input type="radio" id="Status" value="true" name="Status" class="custom-control-input">
-                                        <label class="custom-control-label" for="Status">Aktiv</label>
-                                        <span class="field-validation-valid text-danger" asp-validation-for="Status"></span>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="the-box no-border">
+                        <form method="post">
+                            <div class="form-group">
+                                <label>Vəziyyəti</label>
+                                <div class="custom-control custom-radio custom-control-inline ml-3">
+                                    <input type="radio" id="Status" value="true" name="Status" class="custom-control-input">
+                                    <label class="custom-control-label" for="Status">Aktiv</label>
+                                    <span class="field-validation-valid text-danger" asp-validation-for="Status"></span>
 
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="StatusFal" value="false" name="Status" class="custom-control-input">
+                                    <label class="custom-control-label" for="StatusFal">Passiv</label>
+
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-sm-8 col-lg-8">
+                                    <div class="form-group">
+                                        <label asp-for="Title">Başlıq</label>
+                                        <input class="form-control form-control-user slug-source" asp-for="Title">
+                                        <span class="field-validation-valid" asp-validation-for="Title"></span>
                                     </div>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="StatusFal" value="false" name="Status" class="custom-control-input">
-                                        <label class="custom-control-label" for="StatusFal">Passiv</label>
-
+                                    <div class="form-group">
+                                        <label asp-for="Text">Mətn</label>
+                                        <textarea class="form-control form-control-user slug-source" asp-for="Text"></textarea>
+                                        <span class="field-validation-valid" asp-validation-for="Text"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="SubTitle">Yarım başlıq</label>
+                                        <input class="form-control form-control-user slug-source" asp-for="SubTitle">
+                                        <span class="field-validation-valid" asp-validation-for="SubTitle"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="SubText">Yarım Text</label>
+                                        <textarea class="form-control form-control-user slug-source" asp-for="SubText"></textarea>
+                                        <span class="field-validation-valid" asp-validation-for="SubText"></span>
                                     </div>
                                 </div>
-
-
-                                <div class="row">
-                                    <div class="col-sm-8 col-lg-8">
-                                        <div class="form-group">
-                                            <label asp-for="Title">Başlıq</label>
-                                            <input class="form-control form-control-user slug-source" asp-for="Title">
-                                            <span class="field-validation-valid" asp-validation-for="Title"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <label asp-for="Text">Mətn</label>
-                                            <textarea class="form-control form-control-user slug-source" asp-for="Text"></textarea>
-                                            <span class="field-validation-valid" asp-validation-for="Text"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <label asp-for="SubTitle">Yarım başlıq</label>
-                                            <input class="form-control form-control-user slug-source" asp-for="SubTitle">
-                                            <span class="field-validation-valid" asp-validation-for="SubTitle"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <label asp-for="SubText">Yarım Text</label>
-                                            <textarea class="form-control form-control-user slug-source" asp-for="SubText"></textarea>
-                                            <span class="field-validation-valid" asp-validation-for="SubText"></span>
-                                        </div>
+                                <!-- /.col-sm-8 -->
+                                <div class="col-sm-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label asp-for="BlogSlogan">Slogan</label>
+                                        <input class="form-control form-control-user slug-source" asp-for="BlogSlogan">
+                                        <span class="field-validation-valid" asp-validation-for="BlogSlogan"></span>
                                     </div>
-                                    <!-- /.col-sm-8 -->
-                                    <div class="col-sm-4 col-lg-4">
-                                        <div class="form-group">
-                                            <label asp-for="BlogSlogan">Slogan</label>
-                                            <input class="form-control form-control-user slug-source" asp-for="BlogSlogan">
-                                            <span class="field-validation-valid" asp-validation-for="BlogSlogan"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <label asp-for="Tag">Taq</label>
-                                            <input class="form-control form-control-user slug-source" asp-for="Tag">
-                                            <span class="field-validation-valid" asp-validation-for="Tag"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <label asp-for="Image">Şəkil</label>
-                                            <input class="form-control form-control-user slug-source" asp-for="Image">
-                                            <span class="field-validation-valid" asp-validation-for="Image"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <label asp-for="Video">Video</label>
-                                            <input class="form-control form-control-user slug-source" asp-for="Video">
-                                            <span class="field-validation-valid" asp-validation-for="Video"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <label asp-for="ActionText">Hərəkət Yazısı</label>
-                                            <input class="form-control form-control-user slug-source" asp-for="ActionText">
-                                            <span class="field-validation-valid" asp-validation-for="ActionText"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <label asp-for="EndPoint">Link</label>
-                                            <input class="form-control form-control-user slug-source" asp-for="EndPoint">
-                                            <span class="field-validation-valid" asp-validation-for="EndPoint"></span>
-                                        </div>
-                                        <div class="form-group d-flex justify-content-end mt-3">
-                                            <button type="submit" class="btn btn-primary btn-icon-split">
-                                                <span class="icon text-white-50">
-                                                    <i class="fas fa-plus"></i>
-                                                </span>
-                                                <span class="text">Əlavə et</span>
-                                            </button>
-                                        </div>
+                                    <div class="form-group">
+                                        <label asp-for="Tag">Taq</label>
+                                        <input class="form-control form-control-user slug-source" asp-for="Tag">
+                                        <span class="field-validation-valid" asp-validation-for="Tag"></span>
                                     </div>
-                                    <!-- /.col-sm-4 -->
+                                    <div class="form-group gallery">
+                                        <label for="files" type="button" id="uploader" class="btn btn-secondary">Şəkillər yüklə</label>
+                                        <input type="file" name="files" id="files" multiple="" class="d-none" accept="image/*">
+                                        <div class="photos"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Video">Video</label>
+                                        <input class="form-control form-control-user slug-source" asp-for="Video">
+                                        <span class="field-validation-valid" asp-validation-for="Video"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="ActionText">Hərəkət Yazısı</label>
+                                        <input class="form-control form-control-user slug-source" asp-for="ActionText">
+                                        <span class="field-validation-valid" asp-validation-for="ActionText"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="EndPoint">Link</label>
+                                        <input class="form-control form-control-user slug-source" asp-for="EndPoint">
+                                        <span class="field-validation-valid" asp-validation-for="EndPoint"></span>
+                                    </div>
+                                    <div class="form-group d-flex justify-content-end mt-3">
+                                        <button type="submit" class="btn btn-primary btn-icon-split">
+                                            <span class="icon text-white-50">
+                                                <i class="fas fa-plus"></i>
+                                            </span>
+                                            <span class="text">Əlavə et</span>
+                                        </button>
+                                    </div>
                                 </div>
+                                <!-- /.col-sm-4 -->
+                            </div>
 
-                            </form>
-                        </div>
-
+                        </form>
                     </div>
+
                 </div>
             </div>
-        </section>
-        <!-- DataTales Example -->
-        @*<div class="card shadow mb-4">
-            <div class="card-body">
-                <form method="post">
-                    <div class="form-group">
-                        <label>Vəziyyəti</label>
-                        <div class="custom-control custom-radio custom-control-inline ml-3">
-                            <input type="checkbox" asp-for="Status" value="true" class="custom-control-input" checked="">
-                            <label class="custom-control-label" asp-for="Status">Aktiv</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Title">Başlıq</label>
-                        <input class="form-control form-control-user slug-source" asp-for="Title">
-                        <span class="field-validation-valid text-danger" asp-validation-for="Title"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Text">Mətn</label>
-                        <textarea class="form-control form-control-user slug-source" asp-for="Text"></textarea>
-                        <span class="field-validation-valid text-danger" asp-validation-for="Text"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Tag">Taq</label>
-                        <input class="form-control form-control-user slug-source" asp-for="Tag">
-                        <span class="field-validation-valid text-danger" asp-validation-for="Tag"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Image">Şəkil</label>
-                        <input class="form-control form-control-user slug-source" asp-for="Image">
-                        <span class="field-validation-valid text-danger" asp-validation-for="Image"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Video">Video</label>
-                        <input class="form-control form-control-user slug-source" asp-for="Video">
-                        <span class="field-validation-valid text-danger" asp-validation-for="Video"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="SubTitle">Yarım başlıq</label>
-                        <input class="form-control form-control-user slug-source" asp-for="SubTitle">
-                        <span class="field-validation-valid text-danger" asp-validation-for="SubTitle"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="BlogSlogan">Slogan</label>
-                        <input class="form-control form-control-user slug-source" asp-for="BlogSlogan">
-                        <span class="field-validation-valid text-danger" asp-validation-for="BlogSlogan"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="SubText">Yarım Text</label>
-                        <textarea class="form-control form-control-user slug-source" asp-for="SubText"></textarea>
-                        <span class="field-validation-valid text-danger" asp-validation-for="SubText"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="ActionText">Hərəkət Yazısı</label>
-                        <input class="form-control form-control-user slug-source" asp-for="ActionText">
-                        <span class="field-validation-valid text-danger" asp-validation-for="ActionText"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="EndPoint">Link</label>
-                        <input class="form-control form-control-user slug-source" asp-for="EndPoint">
-                        <span class="field-validation-valid text-danger" asp-validation-for="EndPoint"></span>
-                    </div>
+        </div>
+    </section>
 
-                    <div class="form-group d-flex justify-content-end mt-3">
-                        <button type="submit" class="btn btn-primary btn-icon-split">
-                            <span class="icon text-white-50">
-                                <i class="fas fa-plus"></i>
-                            </span>
-                            <span class="text">Əlavə et</span>
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>*@
 
-    </div>
+</div>
 <!-- /.container-fluid -->
 
 @section Scripts{
     <script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($("input[name='files']").length) {
+                $("input[name='files']").change(function () {
+                    for (var i = 0; i < this.files.length; i++) {
+                        var formData = new FormData();
+                        formData.append('file', this.files[i]);
+                        $.ajax({
+                            url: '/blogs/upload',
+                            type: 'POST',
+                            data: formData,
+                            processData: false,
+                            contentType: false,
+                            dataType: "json",
+                            success: function (response) {
+                                let index = $(".photos .item").length;
+                                $(".photos").append(`<div class="item" style= "display:flex">
+                                                        <input type="hidden" value="${ (index + 1)}" name="Photos[${index}].OrderBy" />
+                                                        <input type="hidden" value="${response.filename}" name="Image" />
+                                                        <img src="${ response.src}" style="width:150px"/>
+                                                        <a href="#" data-name="${  response.filename}" style="color:red" class="remove"><i class="fa fa-trash"></i></a>
+                                                    </div>`);
+                            }
+                        });
+                        break;
+                    }
+                });
+                $(document).on("click", ".photos .remove", function (ev) {
+                    ev.preventDefault();
+                    let elem = $(this).parents(".item");
+                    $.ajax({
+                        url: '/blogs/remove',
+                        data: {
+                            name: $(this).data("name")
+                        },
+                        type: "post",
+                        dataType: "json",
+                        success: function (response) {
+                            elem.remove();
+                        }
+                    });
+                });
+            }
+        })
+    </script>
 }

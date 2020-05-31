@@ -308,3 +308,4 @@ C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\bin\Debug\netcoreapp3.1\Pa
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\bin\Debug\netcoreapp3.1\PagedList.Core.Mvc.dll
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\bin\Debug\netcoreapp3.1\CryptoHelper.dll
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\obj\Debug\netcoreapp3.1\Razor\Views\FaqPage\Index.cshtml.g.cs
+C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Jotex\bin\Debug\netcoreapp3.1\CloudinaryDotNet.dll

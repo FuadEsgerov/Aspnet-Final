@@ -70,5 +70,20 @@ namespace Repository.Repositories.AboutRepositories
             _context.Abouts.Remove(about);
             _context.SaveChanges();
         }
+
+        public void RemovePhotoById(int id)
+        {
+            About aboutPhoto = _context.Abouts.Find(id);
+
+            _context.Abouts.Remove(aboutPhoto);
+
+            _context.SaveChanges();
+        }
+
+        public void AddPhoto(About aboutPhoto)
+        {
+            _context.Abouts.Add(aboutPhoto);
+            _context.SaveChanges();
+        }
     }
 }

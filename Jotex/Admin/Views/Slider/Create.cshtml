@@ -1,5 +1,4 @@
 ﻿@model Admin.Models.Pages.SliderViewModel
-
 <!-- Begin Page Content -->
 <div class="container-fluid">
     <!-- Page Heading -->
@@ -27,7 +26,11 @@
                     <input class="form-control form-control-user slug-source" asp-for="Title">
                     <span class="field-validation-valid text-danger" asp-validation-for="Title"></span>
                 </div>
-                
+                <div class="form-group gallery">
+                    <label for="files" type="button" id="uploader" class="btn btn-secondary">Şəkillər yüklə</label>
+                    <input type="file" name="files" id="files" multiple="" class="d-none" accept="image/*">
+                    <div class="photos"></div>
+                </div>
 
                 <div class="form-group">
                     <label asp-for="Slogan">Texti daxil edin</label>
@@ -44,7 +47,7 @@
                     <input class="form-control form-control-user slug-source" asp-for="EndPoint">
                     <span class="field-validation-valid text-danger" asp-validation-for="EndPoint"></span>
                 </div>
-         
+
                 <div class="form-group d-flex justify-content-end mt-3">
                     <button type="submit" class="btn btn-primary btn-icon-split">
                         <span class="icon text-white-50">
@@ -63,5 +66,49 @@
 @section Scripts{
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-
+    <script>
+        $(document).ready(function () {
+            if ($("input[name='files']").length) {
+                $("input[name='files']").change(function () {
+                    for (var i = 0; i < this.files.length; i++) {
+                        var formData = new FormData();
+                        formData.append('file', this.files[i]);
+                        $.ajax({
+                            url: '/blogs/upload',
+                            type: 'POST',
+                            data: formData,
+                            processData: false,
+                            contentType: false,
+                            dataType: "json",
+                            success: function (response) {
+                                let index = $(".photos .item").length;
+                                $(".photos").append(`<div class="item" style= "display:flex">
+                                                                <input type="hidden" value="${ (index + 1)}" name="Photos[${index}].OrderBy" />
+                                                                <input type="hidden" value="${response.filename}" name="Image" />
+                                                                <img src="${ response.src}" style="width:150px"/>
+                                                                <a href="#" data-name="${  response.filename}" style="color:red" class="remove"><i class="fa fa-trash"></i></a>
+                                                            </div>`);
+                            }
+                        });
+                        break;
+                    }
+                });
+                $(document).on("click", ".photos .remove", function (ev) {
+                    ev.preventDefault();
+                    let elem = $(this).parents(".item");
+                    $.ajax({
+                        url: '/blogs/remove',
+                        data: {
+                            name: $(this).data("name")
+                        },
+                        type: "post",
+                        dataType: "json",
+                        success: function (response) {
+                            elem.remove();
+                        }
+                    });
+                });
+            }
+        })
+    </script>
 }

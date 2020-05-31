@@ -1,19 +1,20 @@
 ﻿@model BlogViewModel
+@inject Repository.Services.ICloudinaryService _cloudinaryServise
 @{ ViewData["Title"] = "Blog Ətraflı"; }
 
 @await Html.PartialAsync("../Shared/Page/_BreadCrumb")
 
-    <section class="blog-single-section section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col col-md-8">
-                    <div class="blog-content">
-                        <div class="post format-standard-image">
-                            @foreach (var item in Model.OurBlogs)
-                            {
+<section class="blog-single-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-8">
+                <div class="blog-content">
+                    <div class="post format-standard-image">
+                        @foreach (var item in Model.OurBlogs)
+                        {
                             <div class="entry-media">
-                               
-                                <img src="~/images/blog/@item.Image" alt="">
+
+                                <img src="@_cloudinaryServise.BuildUrl(item.Image)" alt="@_cloudinaryServise.BuildUrl(item.Image)">
                             </div>
                             <ul class="entry-meta">
                                 <li><a href="#"><i class="fi flaticon-user"></i> By: @item.AddedBy</a></li>
@@ -22,202 +23,206 @@
                             </ul>
                             <h2>@item.Title</h2>
                             <p>@item.Text</p>
-                            
+
                             <blockquote>
                                 The game triple h out on the table Samsa was a travelling salesman and above it there hung a picture that he had recently cut out of an
                                 <span class="quoter">- Michel dow</span>
                             </blockquote>
                             <h3>@item.SubTitle </h3>
                             <p>@item.SubText</p>
-                            } </div>
+                        }
+                    </div>
 
-                        <div class="tag-share clearfix">
-                            <div class="tag">
-                                <span>Tags: </span>
-                                <ul>
-                                    <li><a href="#">Life insurance</a></li>
-                                    <li><a href="#">Biker</a></li>
-                                </ul>
-                            </div>
-                            <div class="share">
-                                <span>Share: </span>
-                                <ul>
+                    <div class="tag-share clearfix">
+                        <div class="tag">
+                            <span>Tags: </span>
+                            <ul>
+                                <li><a href="#">Life insurance</a></li>
+                                <li><a href="#">Biker</a></li>
+                            </ul>
+                        </div>
+                        <div class="share">
+                            <span>Share: </span>
+                            <ul>
+                                <li><a href="#"><i class="ti-facebook"></i></a></li>
+                                <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+                                <li><a href="#"><i class="ti-linkedin"></i></a></li>
+                                <li><a href="#"><i class="ti-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div> <!-- end tag-share -->
+
+                    <div class="author-box">
+                        <div class="author-avatar">
+                            <a href="#" target="_blank"><img src="~/images/blog-details/author.jpg" alt=""></a>
+                        </div>
+                        <div class="author-content">
+                            <a href="#" class="author-name">Michel Don</a>
+                            <p>Doing right hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather.</p>
+                            <div class="socials">
+                                <ul class="social-link">
                                     <li><a href="#"><i class="ti-facebook"></i></a></li>
                                     <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
                                     <li><a href="#"><i class="ti-linkedin"></i></a></li>
                                     <li><a href="#"><i class="ti-instagram"></i></a></li>
                                 </ul>
                             </div>
-                        </div> <!-- end tag-share -->
-
-                        <div class="author-box">
-                            <div class="author-avatar">
-                                <a href="#" target="_blank"><img src="~/images/blog-details/author.jpg" alt=""></a>
-                            </div>
-                            <div class="author-content">
-                                <a href="#" class="author-name">Michel Don</a>
-                                <p>Doing right hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather.</p>
-                                <div class="socials">
-                                    <ul class="social-link">
-                                        <li><a href="#"><i class="ti-facebook"></i></a></li>
-                                        <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
-                                        <li><a href="#"><i class="ti-linkedin"></i></a></li>
-                                        <li><a href="#"><i class="ti-instagram"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div> <!-- end author-box -->
-
-                        <div class="more-posts">
-                            <div class="previous-post">
-                                <a href="#">
-                                    <span class="post-control-link">Previous Post</span>
-                                    <span class="post-name">Covered Mechin  the whole of her lower arm towards the armes</span>
-                                </a>
-                            </div>
-                            <div class="next-post">
-                                <a href="0">
-                                    <span class="post-control-link">Next Post</span>
-                                    <span class="post-name"> Tomar name was then turned to lwindow at the dull weather.</span>
-                                </a>
-                            </div>
                         </div>
+                    </div> <!-- end author-box -->
 
-                        <div class="comments-area">
-                            <div class="comments-section">
-                                <h3 class="comments-title">@Model.Reviews.Count() Rəy</h3>
-                                <ol class="comments">
-                                    <li class="comment even thread-even depth-1" id="comment-1">
-                                        <div id="div-comment-1">
-                                          
-                                            @foreach(var item in Model.Reviews) {
+                    <div class="more-posts">
+                        <div class="previous-post">
+                            <a href="#">
+                                <span class="post-control-link">Previous Post</span>
+                                <span class="post-name">Covered Mechin  the whole of her lower arm towards the armes</span>
+                            </a>
+                        </div>
+                        <div class="next-post">
+                            <a href="0">
+                                <span class="post-control-link">Next Post</span>
+                                <span class="post-name"> Tomar name was then turned to lwindow at the dull weather.</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="comments-area">
+                        <div class="comments-section">
+                            <h3 class="comments-title">@Model.Reviews.Count() Rəy</h3>
+                            <ol class="comments">
+                                <li class="comment even thread-even depth-1" id="comment-1">
+                                    <div id="div-comment-1">
+
+                                        @foreach (var item in Model.Reviews)
+                                        {
                                             <div class="comment-main-area">
                                                 <div class="comment-wrapper">
                                                     <div class="comments-meta">
                                                         <br />
                                                         <h4>@item.Username <span class="comments-date">says Jan 05, 2020 at 9:00am</span></h4>
                                                     </div>
-                                                    
+
                                                     <div class="comment-area">
                                                         <p>@item.Text</p>
                                                         <div class="comments-reply">
                                                             <br />
                                                             <a class="comment-reply-link" href="#"><span>Cavabla</span></a>
-                                                           
+
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            } </div>
-                                       
-                                    </li>
+                                        }
+                                    </div>
 
-                                 
-                                </ol>
-                            </div> <!-- end comments-section -->
+                                </li>
 
-                            <div class="comment-respond">
-                                <h3 class="comment-reply-title">Add your comment</h3>
-                                <form method="post" id="commentform" class="comment-form">
-                                    <div class="form-textarea">
-                                        <textarea id="comment"  asp-for="Reviews.ElementAt(0).Text" placeholder="Rəy yazın..."></textarea>
-                                    </div>
-                                    <div class="form-inputs">
-                                        <input asp-for="Reviews.ElementAt(0).Username" placeholder="Name" type="text">
-                                    </div>
-                                    <div class="form-submit">
-                                        <input id="submit" value="Post Comment" type="submit">
-                                    </div>
-                                </form>
-                            </div>
-                        </div> <!-- end comments-area -->
-                    </div>
-                </div>
-                <div class="col col-md-4">
-                    <div class="blog-sidebar">
-                        <div class="widget about-widget">
-                            <h3>About us</h3>
-                            <div class="img-holder">
-                                <img src="~/images/blog/about-widget.jpg" alt="">
-                            </div>
-                            <p>Samples lay spread out on the Samsa was a travelling salesman and above it there hung and null about  that he</p>
-                            <div class="social">
-                                <ul class="clearfix">
-                                    <li><a href="#"><i class="ti-facebook"></i></a></li>
-                                    <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
-                                    <li><a href="#"><i class="ti-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="ti-pinterest"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="widget search-widget">
-                            <h3>Search</h3>
-                            <form>
-                                <div>
-                                    <input type="text" class="form-control" placeholder="Search Post..">
-                                    <button type="submit"><i class="ti-search"></i></button>
+
+                            </ol>
+                        </div> <!-- end comments-section -->
+
+                        <div class="comment-respond">
+                            <h3 class="comment-reply-title">Add your comment</h3>
+                            <form method="post" id="commentform" class="comment-form">
+                                <div class="form-textarea">
+                                    <textarea id="comment" asp-for="Reviews.ElementAt(0).Text" placeholder="Rəy yazın..."></textarea>
+                                </div>
+                                <div class="form-inputs">
+                                    <input asp-for="Reviews.ElementAt(0).Username" placeholder="Name" type="text">
+                                </div>
+                                <div class="form-submit">
+                                    <input id="submit" value="Post Comment" type="submit">
                                 </div>
                             </form>
                         </div>
-                        <div class="widget category-widget">
-                            <h3>Categories</h3>
-                            <ul>
-                                @foreach(var item in Model.Services) { 
+                    </div> <!-- end comments-area -->
+                </div>
+            </div>
+            <div class="col col-md-4">
+                <div class="blog-sidebar">
+                    <div class="widget about-widget">
+                        <h3>About us</h3>
+                        <div class="img-holder">
+                            <img src="~/images/blog/about-widget.jpg" alt="">
+                        </div>
+                        <p>Samples lay spread out on the Samsa was a travelling salesman and above it there hung and null about  that he</p>
+                        <div class="social">
+                            <ul class="clearfix">
+                                <li><a href="#"><i class="ti-facebook"></i></a></li>
+                                <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+                                <li><a href="#"><i class="ti-linkedin"></i></a></li>
+                                <li><a href="#"><i class="ti-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="widget search-widget">
+                        <h3>Search</h3>
+                        <form>
+                            <div>
+                                <input type="text" class="form-control" placeholder="Search Post..">
+                                <button type="submit"><i class="ti-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="widget category-widget">
+                        <h3>Categories</h3>
+                        <ul>
+                            @foreach (var item in Model.Services)
+                            {
                                 <li><a href="/Service">@item.Name </a></li>
-                                }
-                            </ul>
-                        </div>
-                        <div class="widget recent-post-widget">
-                            <h3>Recent post</h3>
-                            <div class="posts">
-                                <div class="post">
-                                    <div class="img-holder">
-                                        <img src="~/images/recent-posts/img-1.jpg" alt="">
-                                    </div>
-                                    <div class="details">
-                                        <h4><a href="#">For your insurance business, employees, or clients</a></h4>
-                                        <span class="date">11 March 2020</span>
-                                    </div>
+                            }
+                        </ul>
+                    </div>
+                    <div class="widget recent-post-widget">
+                        <h3>Recent post</h3>
+                        <div class="posts">
+                            <div class="post">
+                                <div class="img-holder">
+                                    <img src="~/images/recent-posts/img-1.jpg" alt="">
                                 </div>
-                                <div class="post">
-                                    <div class="img-holder">
-                                        <img src="~/images/recent-posts/img-2.jpg" alt="">
-                                    </div>
-                                    <div class="details">
-                                        <h4><a href="#">Once you’ve picked your vorite, be sure to outfit your</a></h4>
-                                        <span class="date">11 March 2020</span>
-                                    </div>
+                                <div class="details">
+                                    <h4><a href="#">For your insurance business, employees, or clients</a></h4>
+                                    <span class="date">11 March 2020</span>
                                 </div>
-                                <div class="post">
-                                    <div class="img-holder">
-                                        <img src="~/images/recent-posts/img-3.jpg" alt="">
-                                    </div>
-                                    <div class="details">
-                                        <h4><a href="#">Be prepared for life’s Once you’ve picked your vorite</a></h4>
-                                        <span class="date">11 March 2020</span>
-                                    </div>
+                            </div>
+                            <div class="post">
+                                <div class="img-holder">
+                                    <img src="~/images/recent-posts/img-2.jpg" alt="">
+                                </div>
+                                <div class="details">
+                                    <h4><a href="#">Once you’ve picked your vorite, be sure to outfit your</a></h4>
+                                    <span class="date">11 March 2020</span>
+                                </div>
+                            </div>
+                            <div class="post">
+                                <div class="img-holder">
+                                    <img src="~/images/recent-posts/img-3.jpg" alt="">
+                                </div>
+                                <div class="details">
+                                    <h4><a href="#">Be prepared for life’s Once you’ve picked your vorite</a></h4>
+                                    <span class="date">11 March 2020</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="widget tag-widget">
-                            <h3>Tags</h3>
-                            <ul>
-                                <li><a href="#">People</a></li>
-                                <li><a href="#">Business</a></li>
-                                <li><a href="#">Life insurance</a></li>
-                                <li><a href="#">Poll insurance</a></li>
-                                <li><a href="#">Car insurance</a></li>
-                                <li><a href="#">Manfacturing</a></li>
-                            </ul>
-                        </div>
-                        <div class="widget ad-widget">
-                            <h3>Advertising Spot</h3>
-                            <div class="img-holder">
-                                <a href="#"><img src="~/images/blog/ad-img.jpg" alt=""></a>
-                            </div>
+                    </div>
+                    <div class="widget tag-widget">
+                        <h3>Tags</h3>
+                        <ul>
+                            <li><a href="#">People</a></li>
+                            <li><a href="#">Business</a></li>
+                            <li><a href="#">Life insurance</a></li>
+                            <li><a href="#">Poll insurance</a></li>
+                            <li><a href="#">Car insurance</a></li>
+                            <li><a href="#">Manfacturing</a></li>
+                        </ul>
+                    </div>
+                    <div class="widget ad-widget">
+                        <h3>Advertising Spot</h3>
+                        <div class="img-holder">
+                            <a href="#"><img src="~/images/blog/ad-img.jpg" alt=""></a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> <!-- end container -->
-    </section>
+        </div>
+    </div> <!-- end container -->
+</section>

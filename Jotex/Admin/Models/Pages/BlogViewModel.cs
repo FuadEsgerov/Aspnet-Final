@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -44,5 +45,6 @@ namespace Admin.Models.Pages
         [Required(ErrorMessage = "Link vacibdir")]
         [MaxLength(100, ErrorMessage = "Link 100 xarakterdən çox ola bilməz")]
         public string EndPoint { get; set; }
+        public IFormFile File { get; set; }
     }
 }

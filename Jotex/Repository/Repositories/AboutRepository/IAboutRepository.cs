@@ -15,5 +15,7 @@ namespace Repository.Repositories.AboutRepositories
         About GetAboutById(int id);
         void UpdateAbout(About aboutToUpdate, About model);
         void DeleteAbout(About about);
+        void RemovePhotoById(int id);
+        void AddPhoto(About aboutPhoto);
     }
 }

@@ -26,6 +26,8 @@ namespace Repository.Repositories.ContentRepositories
         OurBlog GetBlogById(int id);
         void UpdateBlog(OurBlog blogToUpdate, OurBlog model);
         void DeleteBlog(OurBlog blog);
+        void RemovePhotoById(int id);
+        void AddPhoto(OurBlog blogPhoto);
         IEnumerable<Service> GetAllServices();
         Service CreateService(Service model);
         Service GetServiceById(int id);

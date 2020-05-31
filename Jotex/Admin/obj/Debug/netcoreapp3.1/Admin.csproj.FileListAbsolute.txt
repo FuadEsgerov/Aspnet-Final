@@ -183,3 +183,4 @@ C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Admin\obj\Debug\netcoreapp3.1\Ra
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Agent\Index.cshtml.g.cs
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Agent\Create.cshtml.g.cs
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Admin\obj\Debug\netcoreapp3.1\Razor\Views\Agent\Edit.cshtml.g.cs
+C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Admin\bin\Debug\netcoreapp3.1\CloudinaryDotNet.dll

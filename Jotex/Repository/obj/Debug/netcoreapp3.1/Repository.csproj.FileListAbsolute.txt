@@ -15,4 +15,3 @@ C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Repository\obj\Debug\netcoreapp3
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Repository\obj\Debug\netcoreapp3.1\Repository.dll
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Repository\obj\Debug\netcoreapp3.1\Repository.pdb
 C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Repository\obj\Debug\netcoreapp3.1\Repository.csproj.CoreCompileInputs.cache
-C:\Users\Darklight\Documents\Aspnet-Final\Jotex\Repository\obj\Debug\netcoreapp3.1\Repository.csprojAssemblyReference.cache

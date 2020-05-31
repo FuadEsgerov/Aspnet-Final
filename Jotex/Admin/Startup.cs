@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Admin.Libs;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -17,6 +18,7 @@ using Repository.Repositories.CaseRepositories;
 using Repository.Repositories.ContentRepositories;
 using Repository.Repositories.FaqRepository;
 using Repository.Repositories.HomeRepositories;
+using Repository.Services;
 
 namespace Admin
 {
@@ -45,6 +47,8 @@ namespace Admin
             services.AddTransient<IContentRepository, ContentRepository>();
             services.AddTransient<IAboutRepository, AboutRepository>();
             services.AddTransient<ICaseRepository, CaseRepository>();
+            services.AddTransient<ICloudinaryService, CloudinaryService>();
+            services.AddTransient<IFileManager, FileManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

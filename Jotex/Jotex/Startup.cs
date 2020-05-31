@@ -12,6 +12,7 @@ using Repository.Repositories.ContactRepositories;
 using Repository.Repositories.ContentRepositories;
 using Repository.Repositories.FaqRepository;
 using Repository.Repositories.HomeRepositories;
+using Repository.Services;
 
 namespace Jotex
 {
@@ -36,6 +37,8 @@ namespace Jotex
             services.AddTransient<IContactRepository, ContactRepository>();
             services.AddTransient<IAboutRepository, AboutRepository>();
             services.AddTransient<ICaseRepository, CaseRepository>();
+            services.AddTransient<ICloudinaryService, CloudinaryService>();
+
             services.AddDbContext<JotexDbContext>(options =>
       options.UseSqlServer(Configuration.GetConnectionString("Default"),
       x => x.MigrationsAssembly("Repository")));

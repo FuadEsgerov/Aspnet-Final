@@ -79,6 +79,7 @@ namespace Repository.Repositories.HomeRepositories
             sliderToUpdate.Status = model.Status;
             sliderToUpdate.Title = model.Title;
             sliderToUpdate.ActionText = model.ActionText;
+            sliderToUpdate.Image = model.Image;
             sliderToUpdate.EndPoint = model.EndPoint;
             sliderToUpdate.Slogan = model.Slogan;
             sliderToUpdate.ModifiedBy = model.ModifiedBy;
@@ -131,6 +132,21 @@ namespace Repository.Repositories.HomeRepositories
         public void DeleteArea(LikeableArea area)
         {
             _context.LikeableAreas.Remove(area);
+            _context.SaveChanges();
+        }
+
+        public void RemovePhotoById(int id)
+        {
+            SliderItem slidePhoto = _context.SliderItems.Find(id);
+
+            _context.SliderItems.Remove(slidePhoto);
+
+            _context.SaveChanges();
+        }
+
+        public void AddPhoto(SliderItem slidePhoto)
+        {
+            _context.SliderItems.Add(slidePhoto);
             _context.SaveChanges();
         }
     }

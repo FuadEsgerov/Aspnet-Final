@@ -25,6 +25,8 @@ namespace Repository.Repositories.HomeRepositories
         LikeableArea GetAreaById(int id);
         void UpdateArea(LikeableArea areaToUpdate, LikeableArea model);
         void DeleteArea(LikeableArea area);
+        void RemovePhotoById(int id);
+        void AddPhoto(SliderItem slidePhoto);
 
 
     }

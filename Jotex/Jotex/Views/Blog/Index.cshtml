@@ -1,5 +1,7 @@
-﻿
-@model BlogViewModel
+﻿@model BlogViewModel
+
+@inject Repository.Services.ICloudinaryService _cloudinaryServise
+
 @{ ViewData["Title"] = "Blog Ətraflı"; }
 
 <!-- start page-title -->
@@ -15,38 +17,39 @@
                     {
                         @if (item.Video != null)
                         {
-                    <div class="post format-video">
-                        <div class="entry-media video-holder">
-                            <img src="~/images/blog/@item.Image" alt="@item.Image">
-                            <a href="@item.Video" class="video-btn" data-type="iframe">
-                                <i class="fi flaticon-play"></i>
-                            </a>
-                        </div>
-                        <ul class="entry-meta">
-                           
-                            <li><a href="/Service"><i class="fi flaticon-tag-1"></i>  @item.Tag</a></li> 
-                        </ul>
-                        <h3><a href="#">@item.Title</a></h3>
-                        @if (item.Text.Length > 200)
-                        {
-                            <p>@item.Text.Substring(0, 200).....</p>}
-                    <a href="/Blog/Detailed/@item.Id" class="theme-btn-s3">@item.ActionText</a>
-                    </div>}
-                        else { <div class="post format-standard-image">
-    <div class="entry-media">
-        <img src="~/images/blog/@item.Image" alt="@item.Image">
-    </div>
-    <ul class="entry-meta">
-        <li><a href="/Service"><i class="fi flaticon-tag-1"></i>  @item.Tag</a></li>
-    </ul>
-    <h3><a href="#">@item.Title</a></h3>
-    @if (item.Text.Length > 200)
-    {
-        <p>@item.Text.Substring(0, 200).....</p>}
-    <a href="/Blog/Detailed/@item.Id" class="theme-btn-s3">@item.ActionText</a>
-</div>}
+                            <div class="post format-video">
+                                <div class="entry-media video-holder">
+                                    <img src="@_cloudinaryServise.BuildUrl(item.Image)" alt="@_cloudinaryServise.BuildUrl(item.Image)">
+                                    <a href="@item.Video" class="video-btn" data-type="iframe">
+                                        <i class="fi flaticon-play"></i>
+                                    </a>
+                                </div>
+                                <ul class="entry-meta">
 
-                        }
+                                    <li><a href="/Service"><i class="fi flaticon-tag-1"></i>  @item.Tag</a></li>
+                                </ul>
+                                <h3><a href="#">@item.Title</a></h3>
+                                @if (item.Text.Length > 200)
+                                {
+                                    <p>@item.Text.Substring(0, 200).....</p>}
+                                <a href="/Blog/Detailed/@item.Id" class="theme-btn-s3">@item.ActionText</a>
+                            </div>}
+                        else
+                        { <div class="post format-standard-image">
+                                <div class="entry-media">
+                                    <img src="@_cloudinaryServise.BuildUrl(item.Image)" alt="@_cloudinaryServise.BuildUrl(item.Image)">
+                                </div>
+                                <ul class="entry-meta">
+                                    <li><a href="/Service"><i class="fi flaticon-tag-1"></i>  @item.Tag</a></li>
+                                </ul>
+                                <h3><a href="#">@item.Title</a></h3>
+                                @if (item.Text.Length > 200)
+                                {
+                                    <p>@item.Text.Substring(0, 200).....</p>}
+                                <a href="/Blog/Detailed/@item.Id" class="theme-btn-s3">@item.ActionText</a>
+                            </div>}
+
+                    }
 
                     @if (Model.Count > Model.Limit)
                     {

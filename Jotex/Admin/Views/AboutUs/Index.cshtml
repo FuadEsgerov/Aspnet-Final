@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<Admin.Models.Pages.AboutUsViewModel>
+@inject Repository.Services.ICloudinaryService _cloudinaryService
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -38,34 +39,36 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                        <tr>
-                            <td>
-                                @if (@item.Status)
-                                {
-                                    <span class="badge badge-success">Aktive</span>
-                                }
-                                else
-                                {
-                                    <span class="badge badge-danger">Deaktiv</span>
-                                }
-                            </td>
-                            <td>@item.Title</td>
-                            <td>@item.Text</td>
-                            <td>@item.Phone</td>
-                            <td>@item.Image</td>
-                           
-                         
-                            <td>
-                                <a class="btn btn-info btn-circle btn-sm" asp-action="edit" asp-route-id="@item.Id">
-                                    <i class="fas fa-pencil-alt"></i>
-                                </a>
-                            </td>
-                            <td>
-                                <a class="btn btn-danger btn-circle btn-sm deleteitem" asp-action="delete" asp-route-id="@item.Id">
-                                    <i class="fas fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>
+                                    @if (@item.Status)
+                                    {
+                                        <span class="badge badge-success">Aktive</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge badge-danger">Deaktiv</span>
+                                    }
+                                </td>
+                                <td>@item.Title</td>
+                                <td>@item.Text</td>
+                                <td>@item.Phone</td>
+                                <td>
+                                    <img width="100" src="@_cloudinaryService.BuildUrl(item.Image)" />
+                                </td>
+
+
+                                <td>
+                                    <a class="btn btn-info btn-circle btn-sm" asp-action="edit" asp-route-id="@item.Id">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger btn-circle btn-sm deleteitem" asp-action="delete" asp-route-id="@item.Id">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
                         }
 
                     </tbody>

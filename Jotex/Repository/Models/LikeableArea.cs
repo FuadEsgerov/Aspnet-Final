@@ -31,7 +31,7 @@ namespace Repository.Models
         public string Phote { get; set; }
         [Required]
         [MaxLength(50)]
-        public int Year { get; set; }
+        public string Year { get; set; }
         [Required]
         [MaxLength(50)]
         public string Experience { get; set; }

@@ -35,7 +35,7 @@ namespace Admin.Models.Pages
         public string Phote { get; set; }
         [Required(ErrorMessage = "İl vacibdir")]
         [MaxLength(50, ErrorMessage = "İl 50 xarakterdən çox ola bilməz")]
-        public int Year { get; set; }
+        public string Year { get; set; }
         [Required(ErrorMessage = "Təcrübə vacibdir")]
         [MaxLength(50, ErrorMessage = "Təcrübə 100 xarakterdən çox ola bilməz")]
         public string Experience { get; set; }

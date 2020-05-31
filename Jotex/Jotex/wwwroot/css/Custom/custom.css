@@ -1,0 +1,34 @@
+﻿﻿.large {
+    font-size: 25px;
+}
+
+.gallery .photos {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .gallery .photos .item {
+        width: 25%;
+        position: relative;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+
+        .gallery .photos .item img {
+            max-width: 100%;
+        }
+
+        .gallery .photos .item .remove {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: white;
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            background: #e74a3b;
+            border-radius: 50%;
+            font-size: 12px;
+        }

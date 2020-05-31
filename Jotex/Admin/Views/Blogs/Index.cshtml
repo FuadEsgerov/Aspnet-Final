@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<Admin.Models.Pages.BlogViewModel>
+@inject Repository.Services.ICloudinaryService _cloudinaryServise
 @{
     ViewData["Title"] = "Blog";
 }
@@ -24,9 +25,7 @@
                             <th>Mətni</th>
                             <th>Taqı</th>
                             <th>Şəkli</th>
-                            <th>Videosu</th>
-                            
-                            <th>Düzəliş</th>
+                           <th>Düzəliş</th>
                             <th>Sil</th>
                         </tr>
                     </thead>
@@ -37,8 +36,6 @@
                             <th>Mətni</th>
                             <th>Taqı</th>
                             <th>Şəkli</th>
-                            <th>Videosu</th>
-
                             <th>Düzəliş</th>
                             <th>Sil</th>
                         </tr>
@@ -60,18 +57,18 @@
                             <td>@item.Title</td>
                             <td>@item.Text</td>
                             <td>@item.Tag</td>
-                            <td>@item.Image</td>
-                            <td>@item.Video</td>
-                            
-
                             <td>
-                                <a class="btn btn-info btn-circle btn-sm" asp-action="edit" asp-route-id="@item.Id">
-                                    <i class="fas fa-pencil-alt"></i>
-                                </a>
+                                <img width="100" src="@_cloudinaryServise.BuildUrl(item.Image)" />
                             </td>
-                            <td>
-                                <a class="btn btn-danger btn-circle btn-sm deleteitem" asp-action="delete" asp-route-id="@item.Id">
+
+
+
+                            <td style="width:14%">
+                                <a asp-action="delete" asp-route-id="@item.Id" class="btn btn-danger btn-circle deleteitem">
                                     <i class="fas fa-trash"></i>
+                                </a>
+                                <a asp-action="edit" asp-route-id="@item.Id" class="btn btn-success btn-circle ml-3 ">
+                                    <i class="fas fa-edit"></i>
                                 </a>
                             </td>
                         </tr>

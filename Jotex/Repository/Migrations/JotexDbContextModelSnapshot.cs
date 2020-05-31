@@ -624,8 +624,9 @@ namespace Repository.Migrations
                         .HasColumnType("nvarchar(150)")
                         .HasMaxLength(150);
 
-                    b.Property<int>("Year")
-                        .HasColumnType("int")
+                    b.Property<string>("Year")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
                     b.HasKey("Id");

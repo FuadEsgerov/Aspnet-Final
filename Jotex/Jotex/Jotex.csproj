@@ -23,4 +23,8 @@
     <ProjectReference Include="..\Repository\Repository.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\services\uploads\" />
+  </ItemGroup>
+
 </Project>

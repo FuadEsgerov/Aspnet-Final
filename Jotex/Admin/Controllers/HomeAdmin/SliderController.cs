@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Admin.Filters;
+using Admin.Libs;
 using Admin.Models.Pages;
 using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Repository.Models;
 using Repository.Repositories.HomeRepositories;
+using Repository.Services;
 
 namespace Admin.Controllers.HomeAdmin
 {
@@ -17,11 +20,15 @@ namespace Admin.Controllers.HomeAdmin
         private Repository.Models.Admin _admin => RouteData.Values["Admin"] as Repository.Models.Admin;
         private readonly IHomeRepository _homeRepository;
         private readonly IMapper _mapper;
+        private readonly IFileManager _fileManager;
+        private readonly ICloudinaryService _cloudinaryService;
 
-        public SliderController(IHomeRepository homeRepository, IMapper mapper)
+        public SliderController(ICloudinaryService cloudinaryService, IHomeRepository homeRepository, IMapper mapper,IFileManager fileManager)
         {
             _homeRepository = homeRepository;
             _mapper = mapper;
+            _fileManager = fileManager;
+            _cloudinaryService = cloudinaryService;
 
         }
 
@@ -87,6 +94,45 @@ namespace Admin.Controllers.HomeAdmin
             if (slider == null) return NotFound();
             _homeRepository.DeleteSlider(slider);
             return RedirectToAction("index");
+        }
+        [HttpPost]
+        public IActionResult Upload(IFormFile file, int? sliderId)
+        {
+            var filename = _fileManager.Upload(file);
+            var publicId = _cloudinaryService.Store(filename);
+            _fileManager.Delete(filename);
+
+            if (sliderId != null)
+            {
+                SliderItem slidePhoto = new SliderItem
+                {
+                    AddedBy = _admin.Fullname,
+                    AddedDate = DateTime.Now,
+                    Image = publicId,
+
+
+                };
+                _homeRepository.AddPhoto(slidePhoto);
+            }
+
+            return Ok(new
+            {
+                filename = publicId,
+                src = _cloudinaryService.BuildUrl(publicId)
+            });
+        }
+
+        [HttpPost]
+        public IActionResult Remove(string name, int? id)
+        {
+            if (id != null)
+            {
+                _homeRepository.RemovePhotoById((int)id);
+            }
+
+            _cloudinaryService.Delete(name);
+
+            return Ok(new { status = 200 });
         }
     }
 }

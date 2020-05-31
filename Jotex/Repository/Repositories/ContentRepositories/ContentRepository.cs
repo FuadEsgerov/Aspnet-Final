@@ -137,6 +137,20 @@ namespace Repository.Repositories.ContentRepositories
             _context.OurBlogs.Remove(blog);
             _context.SaveChanges();
         }
+        public void RemovePhotoById(int id)
+        {
+            OurBlog blogPhoto = _context.OurBlogs.Find(id);
+
+            _context.OurBlogs.Remove(blogPhoto);
+
+            _context.SaveChanges();
+        }
+
+        public void AddPhoto(OurBlog blogPhoto)
+        {
+            _context.OurBlogs.Add(blogPhoto);
+            _context.SaveChanges();
+        }
         //Service Admin
         public IEnumerable<Service> GetAllServices()
         {
@@ -209,5 +223,8 @@ namespace Repository.Repositories.ContentRepositories
             _context.ServiceDetails.Remove(serviceDetail);
             _context.SaveChanges();
         }
+        //Service Admin
+
+
     }
 }

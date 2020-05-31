@@ -1,4 +1,6 @@
 ﻿@model IEnumerable<Admin.Models.Pages.SliderViewModel>
+
+@inject Repository.Services.ICloudinaryService _cloudinaryService
 <!-- Begin Page Content -->
 <div class="container-fluid">
     <!-- DataTales Example -->
@@ -14,7 +16,7 @@
                         <tr>
                             <th>Basliğı</th>
                             <th>Statusu</th>
-                             <th>Mətni</th>
+                            <th>Mətni</th>
                             <th>Hərəkət yazısı</th>
                             <th>Url</th>
                             <th>Şəkli</th>
@@ -39,32 +41,25 @@
                         @foreach (var item in Model)
                         {
 
-                            <tr class="item">
-                                <td>@item.Title</td>
-                                <td>@item.Status</td>
-                                <td>@item.Slogan</td>
-                                <td>@item.ActionText</td>
-                                <td>@item.EndPoint</td>
-                                @if (item.Image != null)
-                                {
-                                    <td>
-                                        <img width="100" src="~/uploads/@item.Image" />
+                        <tr class="item">
+                            <td>@item.Title</td>
+                            <td>@item.Status</td>
+                            <td>@item.Slogan</td>
+                            <td>@item.ActionText</td>
+                            <td>@item.EndPoint</td>
+                            <td>
+                                <img width="100" src="@_cloudinaryService.BuildUrl(item.Image)" />
+                            </td>
 
-                                    </td>
-                                }
-                                else
-                                {
-                                    <td>NULL</td>
-                                }
-                                <td style="width:14%">
-                                    <a asp-action="delete" asp-route-id="@item.Id" class="btn btn-danger btn-circle deleteitem">
-                                        <i class="fas fa-trash"></i>
-                                    </a>
-                                    <a asp-action="edit" asp-route-id="@item.Id" class="btn btn-success btn-circle ml-3 ">
-                                        <i class="fas fa-edit"></i>
-                                    </a>
-                                </td>
-                            </tr>
+                            <td style="width:14%">
+                                <a asp-action="delete" asp-route-id="@item.Id" class="btn btn-danger btn-circle deleteitem">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                                <a asp-action="edit" asp-route-id="@item.Id" class="btn btn-success btn-circle ml-3 ">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
 
 
                         }
