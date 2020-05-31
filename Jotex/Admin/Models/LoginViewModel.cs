@@ -8,6 +8,9 @@ namespace Admin.Models
 {
     public class LoginViewModel
     {
+
+        
+
         [Required(ErrorMessage = "E-poçt vacibdir")]
         [EmailAddress(ErrorMessage = "Düzgün e-poçt daxil edin")]
         [DataType(DataType.EmailAddress)]
